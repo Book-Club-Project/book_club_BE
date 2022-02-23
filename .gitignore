@@ -25,3 +25,6 @@
 /config/master.key
 /Gemfile.lock
 Gemfile.lock
+
+# Ignore application configuration
+/config/application.yml
