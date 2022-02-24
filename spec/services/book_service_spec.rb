@@ -37,7 +37,7 @@ RSpec.describe BookService do
       describe 'book_info(book_id)' do
         it 'returns book data for a single volume' do
           book_data = BookService.book_info("ZV9DDwAAQBAJ")
-  
+    
           expect(book_data).to be_a Hash
 
           expect(book_data).to have_key(:id)

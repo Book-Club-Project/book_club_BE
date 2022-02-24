@@ -6,7 +6,7 @@ RSpec.describe BooksFacade do
       books = BooksFacade.get_searched_books("Pride")
       expect(books).to be_an Array
       expect(books.first).to be_a Book
-    
+
       books.each do |book|
         expect(book).to be_a Book
       end
