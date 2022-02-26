@@ -1,8 +1,7 @@
 ![th-1](https://user-images.githubusercontent.com/87088092/155640565-91ed61db-0262-4bc9-8096-51b616c21508.jpg)
-# Mod3 Group Consultancy Project
+# Mod3 Group Consultancy Project (this repo is used with the [Book Club app](https://github.com/Book-Club-Project/book_club_FE))
 
 reference: [Turing documentation](https://backend.turing.edu/module3/projects/consultancy)
-used in [Book Club app](https://github.com/Book-Club-Project/book_club_FE/edit/readme_edit/README.md)
 
 <details open="open">
   <summary>Table of Contents</summary>
