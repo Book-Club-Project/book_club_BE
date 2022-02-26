@@ -8,6 +8,5 @@ class Api::V1::BooksController < ApplicationController
   def search
     searched_title = params[:title]
     render json: BookSerializer.new(BooksFacade.get_searched_books(searched_title))
-
   end
 end
