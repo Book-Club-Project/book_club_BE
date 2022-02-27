@@ -67,4 +67,34 @@ describe "Users API" do
       end
     end
   end
+
+  describe 'create' do
+    describe 'happy path' do
+      it 'returns the new user as a json object' do
+        user_params = ({
+                    username: 'test1',
+                    email: 'test@email.com'
+                    })
+        headers = {"CONTENT_TYPE" => "application/json"}
+        post api_v1_users_path, headers: headers, params: JSON.generate(user: user_params)
+        created_user = User.last
+
+        expect(response.status).to eq(201)
+        expect(created_user.username).to eq(user_params[:username])
+        expect(created_user.email).to eq(user_params[:email])
+      end
+    end
+
+    describe 'sad path' do
+      it 'does not create a new user and sends error' do
+        user_params = ({
+                    username: 'test1'
+                    })
+        headers = {"CONTENT_TYPE" => "application/json"}
+        post api_v1_users_path, headers: headers, params: JSON.generate(user: user_params)
+
+        expect(response.status).to eq(400)
+      end
+    end
+  end
 end
