@@ -95,6 +95,20 @@ describe "Users API" do
 
         expect(response.status).to eq(400)
       end
+
+      it 'ignores attributes that are not permitted' do
+        user_params = ({
+                  username: 'test1',
+                  email: 'test@email.com',
+                  non_permitted_attribute: 'wooooohoooo'
+                })
+        headers = {"CONTENT_TYPE" => "application/json"}
+        post api_v1_users_path, headers: headers, params: JSON.generate(user: user_params)
+        user = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response.status).to eq(201)
+        expect(user[:data][:attributes]).to_not have_key(:non_permitted_attribute)
+      end
     end
   end
 end
