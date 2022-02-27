@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       get '/books/search', to: 'books#search'
       get '/quote', to: 'quotes#index'
       resources :books, only: [:index, :show]
-      resources :users, only: [:index, :show]
+      resources :users
     end
   end
 end
