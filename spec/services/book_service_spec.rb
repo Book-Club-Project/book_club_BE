@@ -5,7 +5,6 @@ RSpec.describe BookService do
     describe 'search_books(search)' do
       it 'returns list of books data that matches the search params', :vcr do
         search = BookService.search_books("Pride")
-
         expect(search).to be_an Array
 
         expect(search.first).to have_key :id
