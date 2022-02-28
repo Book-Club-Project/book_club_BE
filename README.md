@@ -90,7 +90,7 @@ Implicit
 ## APIs
 Available endpoints
 
-Books endpoint(s)
+<h3> Books endpoint(s) </h3>
 
 | name | data type | description | example |
 | --- | --- | --- | --- |
@@ -100,7 +100,7 @@ Books endpoint(s)
 Data sourced from [Google Books API](https://developers.google.com/books/docs/v1/using)
  
 <details>
-  <summary> JSON response examples </summary>
+    <summary> JSON response examples </summary>
   
 Single book by id:
 ```
@@ -163,7 +163,9 @@ Books by search expample used ("Pride"):
 ```
   
 </details>
-Quotes endpoint(s)
+
+
+<h3> Quotes endpoint(s) </h3>
 
 | name | data type | description | example |
 | --- | --- | --- | --- |
@@ -191,7 +193,8 @@ Random quote:
 
 </details>
 
-User endpoint(s)
+
+<h3> User endpoint(s) </h3>
 
 | name | data type | description | example |
 | --- | --- | --- | --- |
@@ -203,6 +206,9 @@ User endpoint(s)
   
   
 </details>
+
+
+<h3> Clubs endpoint(s) </h3>
 
 | name | data type | description | example |
 | --- | --- | --- | --- |
