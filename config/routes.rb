@@ -15,7 +15,7 @@ Rails.application.routes.draw do
         resources :comments, only: [:index], controller: 'club_comments'
       end
 
-      resources :comments, only: [:index]
+      resources :comments, only: [:index, :create]
     end
   end
 end

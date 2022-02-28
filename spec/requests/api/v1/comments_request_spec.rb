@@ -36,4 +36,60 @@ RSpec.describe 'comments API' do
       end
     end
   end
+
+  describe 'create: post /comments' do
+    describe 'happy path' do
+      it 'returns the new comment as a json object' do
+        user = create(:user)
+        club = create(:club)
+        comment_params = ({
+                    title: 'Best book ever',
+                    body: 'I thought that ending was fire! Would love to hear opinions!',
+                    user_id: user.id,
+                    club_id: club.id
+                    })
+        headers = {"CONTENT_TYPE" => "application/json"}
+        post api_v1_comments_path, headers: headers, params: JSON.generate(comment: comment_params)
+        created_comment = Comment.last
+
+        expect(response.status).to eq(201)
+        expect(created_comment.title).to eq(comment_params[:title])
+        expect(created_comment.body).to eq(comment_params[:body])
+      end
+    end
+
+    describe 'sad paths' do
+      it 'returns 400 status if comment cannot be created due to invalid params' do
+        user = create(:user)
+        club = create(:club)
+        comment_params = ({
+                    body: 'I thought that ending was fire! Would love to hear opinions!',
+                    user_id: user.id,
+                    club_id: club.id
+                    })
+        headers = {"CONTENT_TYPE" => "application/json"}
+        post api_v1_comments_path, headers: headers, params: JSON.generate(comment: comment_params)
+
+        expect(response.status).to eq(400)
+      end
+
+      it 'ignores attributes that are not permitted' do
+        user = create(:user)
+        club = create(:club)
+        comment_params = ({
+                    title: 'Best book ever!',
+                    body: 'I thought that ending was fire! Would love to hear opinions!',
+                    user_id: user.id,
+                    club_id: club.id,
+                    non_permitted_attribute: 'woohooo'
+                    })
+        headers = {"CONTENT_TYPE" => "application/json"}
+        post api_v1_comments_path, headers: headers, params: JSON.generate(comment: comment_params)
+        comment = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response.status).to eq(201)
+        expect(comment[:data][:attributes]).to_not have_key(:non_permitted_attribute)
+      end
+    end
+  end
 end

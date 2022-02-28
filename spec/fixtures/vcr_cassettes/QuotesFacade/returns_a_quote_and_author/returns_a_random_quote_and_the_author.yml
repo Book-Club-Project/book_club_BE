@@ -19,19 +19,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 28 Feb 2022 16:22:27 GMT
+      - Mon, 28 Feb 2022 20:05:57 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '135'
+      - '165'
       Connection:
       - keep-alive
       Set-Cookie:
-      - AWSALB=DiOXRPJI20evgtaW+zew7Xvt9Fa6ntRL8aTB5abCvUmwrcTojV2IAnzrcJVs88kcRz9Ulp+5Yp8pXNXoQD+VN6HPiAkx6wQk2YtL69LholYm+zESlK9LIaksN20D;
-        Expires=Mon, 07 Mar 2022 16:22:27 GMT; Path=/
-      - AWSALBCORS=DiOXRPJI20evgtaW+zew7Xvt9Fa6ntRL8aTB5abCvUmwrcTojV2IAnzrcJVs88kcRz9Ulp+5Yp8pXNXoQD+VN6HPiAkx6wQk2YtL69LholYm+zESlK9LIaksN20D;
-        Expires=Mon, 07 Mar 2022 16:22:27 GMT; Path=/; SameSite=None; Secure
-      - PHPSESSID=o9b3e9904ak93a4mlses5q8km0; path=/
+      - AWSALB=XYY8bvBqiPowwrRmy9YuPAZ5pw4Ua3CI37e/sTW6CppuiOQRxjijs+9+rmegismrncC/T1qhatfnOFQ1pCFoJ18RPGqmiLFp+R2K1LtVmXZeIDMy6KzpBycBW5tg;
+        Expires=Mon, 07 Mar 2022 20:05:57 GMT; Path=/
+      - AWSALBCORS=XYY8bvBqiPowwrRmy9YuPAZ5pw4Ua3CI37e/sTW6CppuiOQRxjijs+9+rmegismrncC/T1qhatfnOFQ1pCFoJ18RPGqmiLFp+R2K1LtVmXZeIDMy6KzpBycBW5tg;
+        Expires=Mon, 07 Mar 2022 20:05:57 GMT; Path=/; SameSite=None; Secure
+      - PHPSESSID=s5c8t79uudvjbcktcp0fpe8cs6; path=/
       Server:
       - Apache/2.4.51 (Amazon) PHP/7.0.33
       X-Powered-By:
@@ -51,14 +51,15 @@ http_interactions:
       Accept-Ranges:
       - bytes
       X-Varnish:
-      - '109925634'
+      - '1681778253'
       Age:
       - '0'
       Via:
       - 1.1 varnish
     body:
       encoding: ASCII-8BIT
-      string: '{"result":{"quote":"You are who you are, and no one can change that.
-        So be yourself, because no one can do it better.","author":"Meylin D. Bojorge"}}'
-  recorded_at: Mon, 28 Feb 2022 16:22:27 GMT
+      string: '{"result":{"quote":"One man scorned and covered with scars still strove
+        with his last ounce of courage to reach the unreachable stars and the world
+        will be better for this.","author":"Miguel de Cervantes"}}'
+  recorded_at: Mon, 28 Feb 2022 20:05:57 GMT
 recorded_with: VCR 6.0.0

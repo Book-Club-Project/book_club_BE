@@ -19,19 +19,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 28 Feb 2022 16:20:29 GMT
+      - Mon, 28 Feb 2022 20:06:01 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '111'
+      - '126'
       Connection:
       - keep-alive
       Set-Cookie:
-      - AWSALB=ohCZCX1A8riiWgKzg3h8XDx9S8Ic9BOYAt5CpuiQctixZkpZdtGNak2LwpSUWO2Ccjl7NH4JdD21jCW4pe52pNHCrRUVcD1ro/YIg3jXlNyp5HIE7Ra4djQjyeUH;
-        Expires=Mon, 07 Mar 2022 16:20:29 GMT; Path=/
-      - AWSALBCORS=ohCZCX1A8riiWgKzg3h8XDx9S8Ic9BOYAt5CpuiQctixZkpZdtGNak2LwpSUWO2Ccjl7NH4JdD21jCW4pe52pNHCrRUVcD1ro/YIg3jXlNyp5HIE7Ra4djQjyeUH;
-        Expires=Mon, 07 Mar 2022 16:20:29 GMT; Path=/; SameSite=None; Secure
-      - PHPSESSID=21qi329rpa43gskeujd8vhjnp7; path=/
+      - AWSALB=Mue7fs8peKbaNnSzTaOl/mSTtVXUVgnVGLA3V/OzQNDY/wB+2QnJhz1E2S7/juw1HzqrzinBsA3MvCOxUNFW8ZCQEev9vKoC9Y6AXGEcngqG07wHRTrh9KV6CF6u;
+        Expires=Mon, 07 Mar 2022 20:06:00 GMT; Path=/
+      - AWSALBCORS=Mue7fs8peKbaNnSzTaOl/mSTtVXUVgnVGLA3V/OzQNDY/wB+2QnJhz1E2S7/juw1HzqrzinBsA3MvCOxUNFW8ZCQEev9vKoC9Y6AXGEcngqG07wHRTrh9KV6CF6u;
+        Expires=Mon, 07 Mar 2022 20:06:00 GMT; Path=/; SameSite=None; Secure
+      - PHPSESSID=f5nkfgd5hj8tpujj09f843ub91; path=/
       Server:
       - Apache/2.4.51 (Amazon) PHP/7.0.33
       X-Powered-By:
@@ -51,14 +51,14 @@ http_interactions:
       Accept-Ranges:
       - bytes
       X-Varnish:
-      - '1354414828'
+      - '110602515'
       Age:
       - '0'
       Via:
       - 1.1 varnish
     body:
       encoding: ASCII-8BIT
-      string: '{"result":{"quote":"On the soft bed of luxury many kingdoms have expired.","author":"Andrew
-        Young"}}'
-  recorded_at: Mon, 28 Feb 2022 16:20:29 GMT
+      string: '{"result":{"quote":"Nine-tenths of the people were created so you would
+        want to be with the other tenth.","author":"Horace Walpole"}}'
+  recorded_at: Mon, 28 Feb 2022 20:06:00 GMT
 recorded_with: VCR 6.0.0
