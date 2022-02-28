@@ -4,7 +4,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       get '/books/search', to: 'books#search'
       resources :books, only: [:index, :show]
-      resources :users
+      resources :users, only: [:index, :show, :create]
+      resources :clubs, only: [:index, :show, :create]
     end
   end
 end
