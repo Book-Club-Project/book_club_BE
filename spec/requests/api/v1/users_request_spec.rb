@@ -95,6 +95,58 @@ describe "Users API" do
 
         expect(response.status).to eq(400)
       end
+
+      it 'ignores attributes that are not permitted' do
+        user_params = ({
+                  username: 'test1',
+                  email: 'test@email.com',
+                  non_permitted_attribute: 'wooooohoooo'
+                })
+        headers = {"CONTENT_TYPE" => "application/json"}
+        post api_v1_users_path, headers: headers, params: JSON.generate(user: user_params)
+        user = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response.status).to eq(201)
+        expect(user[:data][:attributes]).to_not have_key(:non_permitted_attribute)
+      end
+    end
+  end
+
+  describe 'get clubs' do
+    describe 'happy path' do
+      it 'returns the clubs associated with the specified user as a json object' do
+        user_1 = create(:user, id: 1)
+        club_1 = create(:club)
+        club_2 = create(:club)
+        user_1.clubs << club_1
+        user_1.clubs << club_2
+
+        get api_v1_user_clubs_path(1)
+
+        clubs = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response.status).to eq(200)
+        expect(clubs).to have_key(:data)
+        expect(clubs[:data].count).to eq(2)
+
+        clubs[:data].each do |club|
+          expect(club[:id]).to be_a String
+          expect(club).to have_key(:attributes)
+          expect(club[:attributes][:name]).to be_a String
+          expect(club[:attributes][:host_id]).to be_an Integer
+          expect(club[:attributes][:book_id]).to be_an Integer
+        end
+      end
+    end
+
+    describe 'sad path' do
+      it 'returns a 404 error if the user does not exist' do
+        get api_v1_user_clubs_path(1)
+
+        result = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response.status).to eq(404)
+      end
     end
   end
 end

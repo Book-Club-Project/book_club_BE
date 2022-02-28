@@ -3,7 +3,7 @@ require 'rails_helper'
 
 RSpec.describe "books API" do
 
-  it "it can get book attributes  " do
+  it "it can get book attributes" do
 
     get "/api/v1/books/ZV9DDwAAQBAJ"
 
