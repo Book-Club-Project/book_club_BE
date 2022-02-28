@@ -147,5 +147,40 @@ RSpec.describe "Clubs API" do
         end
       end
     end
+
+    describe 'get club comments' do
+      describe 'happy path' do
+        it 'returns a json object of all comments associated with a club' do
+          club_1 = club_with_comments(comments_count: 5)
+          club_2 = club_with_comments(comments_count: 4)
+
+          get api_v1_club_comments_path(club_2.id)
+          expect(response.status).to eq(200)
+          comments = JSON.parse(response.body, symbolize_names: true)
+
+          expect(comments).to have_key(:data)
+          expect(comments[:data].count).to eq(4)
+
+          comments[:data].each do |comment|
+            expect(comment[:id]).to be_a String
+            expect(comment[:attributes][:title]).to be_a String
+            expect(comment[:attributes][:body]).to be_a String
+            expect(comment[:attributes][:user_id]).to be_an Integer
+            expect(comment[:attributes][:club_id]).to be_an Integer
+          end
+        end
+
+        describe 'sad path' do
+          it 'returns a 404 error if club is not found' do
+            get api_v1_club_comments_path(1)
+
+            expect(response.status).to eq(404)
+
+            result = JSON.parse(response.body, symbolize_names: true)
+            expect(result[:error][:exception]).to eq("Couldn't find Club with 'id'=1")
+          end
+        end
+      end
+    end
   end
 end

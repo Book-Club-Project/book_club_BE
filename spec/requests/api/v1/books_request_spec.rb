@@ -3,7 +3,7 @@ require 'rails_helper'
 
 RSpec.describe "books API" do
 
-  it "it can get book attributes" do
+  it "it can get book attributes", :vcr do
 
     get "/api/v1/books/ZV9DDwAAQBAJ"
 
@@ -16,7 +16,7 @@ RSpec.describe "books API" do
     expect(book[:data][:attributes][:title]).to eq("Pride")
   end
 
-  it "it can get books searched by title" do
+  it "it can get books searched by title", :vcr do
 
     get "/api/v1/books/search?title=pride"
 
