@@ -99,9 +99,9 @@ Available endpoints
 
 Data sourced from [Google Books API](https://developers.google.com/books/docs/v1/using)
 
-    <details open="open">
-    <summary> JSON example </summary>
-    </details>
+  <details open="open">
+  <summary> JSON example </summary>
+  </details>
 
 2. Quotes endpoint(s)
 
@@ -111,11 +111,12 @@ Data sourced from [Google Books API](https://developers.google.com/books/docs/v1
 
 Data sourced from [Quote API](https://www.quotes.net/quotes_api.php)
 
-    <details open="open">
-    <summary> JSON example </summary>
-    </details>
+  <details open="open">
+  <summary> JSON example </summary>
+  </details>
 
 3. User endpoint(s)
+
 | name | data type | description | example |
 | --- | --- | --- | --- |
 | /users | String | Returns all users | /api/v1/users |
