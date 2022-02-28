@@ -113,4 +113,38 @@ RSpec.describe "Clubs API" do
       end
     end
   end
+
+  describe 'get club users' do
+    describe 'happy path' do
+      it 'returns all users involved in a club as a json object' do
+        club_1 = club_with_users(users_count: 4)
+        club_2 = club_with_users(users_count: 3)
+        club_3 = club_with_users(users_count: 6)
+
+        get api_v1_club_users_path(club_1.id)
+
+        users = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response.status).to eq(200)
+        expect(users).to have_key(:data)
+
+        expect(users[:data].count).to eq(4)
+        users[:data].each do |user|
+          expect(user[:attributes][:username]).to be_a String
+          expect(user[:attributes][:email]).to be_a String
+        end
+      end
+
+      describe 'sad path' do
+        it 'returns a 404 error if the club is not found' do
+          get api_v1_club_users_path(1)
+
+          result = JSON.parse(response.body, symbolize_names: true)
+
+          expect(response.status).to eq(404)
+          expect(result[:error][:exception]).to eq("Couldn't find Club with 'id'=1")
+        end
+      end
+    end
+  end
 end
