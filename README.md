@@ -1,5 +1,5 @@
 ![th-1](https://user-images.githubusercontent.com/87088092/155640565-91ed61db-0262-4bc9-8096-51b616c21508.jpg)
-# Mod3 Group Consultancy Project 
+# Mod3 Group Consultancy Project
 #####  (this repo is used with the [Book Club app](https://github.com/Book-Club-Project/book_club_FE))
 
 reference: [Turing documentation](https://backend.turing.edu/module3/projects/consultancy)
@@ -38,40 +38,40 @@ reference: [Turing documentation](https://backend.turing.edu/module3/projects/co
 
 ----------
 
-## Project Description 
+## Project Description
 
 This is a back-end project designed to exercise the fundamental basics of exposing and consuming an API.  Book Club builds community through literature. Users can connect through groups, messaging, and a bountiful resource of books. Functionality is achieved by combining our own database, the Google Books API, and external communication APIs to allow real-time communication, discussions, and recommendations.
 
 ----------
 
-## Learning Goals for Project: 
+## Learning Goals for Project:
 
-Explicit 
-- Expose an API 
-- Consume an API 
-- Use serializers to format JSON responses 
-- Implement CircleCI 
+Explicit
+- Expose an API
+- Consume an API
+- Use serializers to format JSON responses
+- Implement CircleCI
 - Implement OAuth2
 
-Implicit 
+Implicit
 - Project planning
-- Reading/Writing documentation 
-- Time Management/Prioritizing Work 
-- Breaking down a large project into small pieces 
+- Reading/Writing documentation
+- Time Management/Prioritizing Work
+- Breaking down a large project into small pieces
 - Breaking down a problem into small steps
-- Experience in 'sprints' 
-- GitHub workflow 
+- Experience in 'sprints'
+- GitHub workflow
 
 ----------
 
-### Versions 
+### Versions
 
-- Ruby 2.7.2 
-- Rails 5.2.6 
+- Ruby 2.7.2
+- Rails 5.2.6
 
----------- 
+----------
 
-### Important Gems 
+### Important Gems
 
 - Testing: [rspec-rails](https://github.com/rspec/rspec-rails), [simplecov](https://github.com/simplecov-ruby/simplecov), [factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails), [faker](https://github.com/vajradog/faker-rails)
 
@@ -80,14 +80,24 @@ Implicit
 
 ----------
 
-## Database Schema 
+## Database Schema
 
 ![Screen Shot 2022-02-22 at 10 31 07 AM](https://user-images.githubusercontent.com/87088092/155647400-97e86edd-30ad-4652-b53b-f26fd5ac429d.png)
 
 
 ----------
 
-## APIs 
+## APIs
+Available endpoints
+
+| name | data type | description | example |
+| --- | --- | --- | --- | --- |
+| /books/:id | Integer | Returns details of a specific book based on the books id | /api/v1/books/{{book id}} |
+| /books/search | String | Returns a list of books with the title containing the search parameter | /api/v1/books/search?title={{search parameter}} |
+| /quote | String | Retruns a random literature quote | /api/v1/quote |
+| /users | String | Returns all users | /api/v1/users |
+| /users/:id | Integer | Returns a single user based on id | /api/v1/users/{{users id}} |
+
 
 
 ----------
