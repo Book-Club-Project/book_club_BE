@@ -69,4 +69,49 @@ RSpec.describe "Clubs API" do
     end
   end
 
+  describe 'create: post /clubs' do
+    describe 'happy path' do
+      it 'returns the new club as a json object' do
+        user = create(:user)
+        club_params = ({name: 'Sherlock Homies',
+                        host_id: user.id,
+                        book_id: 9999})
+        headers = {"CONTENT_TYPE" => "application/json"}
+        post api_v1_clubs_path, headers: headers, params: JSON.generate(club: club_params)
+        created_club = Club.last
+
+        expect(response.status).to eq(201)
+        expect(created_club.name).to eq(club_params[:name])
+        expect(created_club.host_id).to eq(club_params[:host_id])
+        expect(created_club.book_id).to eq(club_params[:book_id])
+      end
+    end
+
+    describe 'sad paths' do
+      it 'does not create the new club if any attributes are missing and returns invalid error' do
+        club_params = ({name: 'Sherlock Homies',
+                        book_id: 9999})
+        headers = {"CONTENT_TYPE" => "application/json"}
+        post api_v1_clubs_path, headers: headers, params: JSON.generate(club: club_params)
+
+        expect(response.status).to eq(400)
+      end
+
+      it 'ignores non-permitted attributes' do
+        user = create(:user)
+        club_params = ({name: 'Sherlock Homies',
+                        host_id: user.id,
+                        book_id: 9999,
+                        non_permitted_attribute: 'wooohooooo'})
+        headers = {"CONTENT_TYPE" => "application/json"}
+        post api_v1_clubs_path, headers: headers, params: JSON.generate(club: club_params)
+        created_club = Club.last
+        club = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response.status).to eq(201)
+        expect(created_club.name).to eq(club_params[:name])
+        expect(club[:data][:attributes]).to_not have_key(:non_permitted_attribute)
+      end
+    end
+  end
 end
