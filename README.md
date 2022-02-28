@@ -222,6 +222,20 @@ Random quote:
 </details>
 
 
+<h3> Comments endpoint(s) </h3>
+
+| name | data type | description | example |
+| --- | --- | --- | --- |
+| /comments | String | Returns all comments | /api/v1/comments |
+
+
+<details>
+  <summary> JSON response examples </summary>
+  
+  
+</details>
+
+
 ----------
 
 ## **Contributors** ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
