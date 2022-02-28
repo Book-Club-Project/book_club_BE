@@ -167,7 +167,7 @@ Quotes endpoint(s)
 
 | name | data type | description | example |
 | --- | --- | --- | --- |
-| /quote | String | Retruns a random literature quote | /api/v1/quote |
+| /quote | String | Returns a random literature quote | /api/v1/quote |
 
 Data sourced from [Quote API](https://www.quotes.net/quotes_api.php)
 
@@ -204,6 +204,16 @@ User endpoint(s)
   
 </details>
 
+| name | data type | description | example |
+| --- | --- | --- | --- |
+| /clubs | String | Returns all clubs | /api/v1/clubs |
+| /users/:id | Integer | Returns a single club based on id | /api/v1/clubs/{{club id}} |
+
+<details>
+  <summary> JSON response examples </summary>
+  
+  
+</details>
 
 
 ----------
