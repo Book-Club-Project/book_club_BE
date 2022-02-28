@@ -90,17 +90,78 @@ Implicit
 ## APIs
 Available endpoints
 
-1. Books endpoint(s)
+Books endpoint(s)
 
-| name | data type | description | example | JSON example |
-| --- | --- | --- | --- | --- |
-| /books/:id | Integer | Returns details of a specific book based on the books id | /api/v1/books/{{book id}} | <details closed="closed">  </details> |
-| /books/search | String | Returns a list of books with the title containing the search parameter | /api/v1/books/search?title={{search parameter}} | <details closed="closed">  </details> |
+| name | data type | description | example |
+| --- | --- | --- | --- |
+| /books/:id | Integer | Returns details of a specific book based on the books id | /api/v1/books/{{book id}} | 
+| /books/search | String | Returns a list of books with the title containing the search parameter | /api/v1/books/search?title={{search parameter}} |
 
 Data sourced from [Google Books API](https://developers.google.com/books/docs/v1/using)
 
+JSON examples 
 
-2. Quotes endpoint(s)
+Single book by id:
+```
+  {
+    "data": {
+        "id": "ZV9DDwAAQBAJ",
+        "type": "book",
+        "attributes": {
+            "title": "Pride",
+            "authors": [
+                "Ibi Zoboi"
+            ],
+            "genres": [
+                "Young Adult Fiction / Diversity & Multicultural",
+                "Young Adult Fiction / Social Themes / Class Differences",
+                "Young Adult Fiction / Romance / Contemporary"
+            ],
+            "description": "<p>In a timely update of Jane Austen's Pride and Prejudice, National Book Award finalist Ibi Zoboi skillfully balances cultural identity, class, and gentrification against the heady magic of first love in her vibrant reimagining of this beloved classic. A smart, funny, gorgeous retelling starring all characters of color. </p><p>Zuri Benitez has pride. Brooklyn pride, family pride, and pride in her Afro-Latino roots. But pride might not be enough to save her rapidly gentrifying neighborhood from becoming unrecognizable. </p><p>When the wealthy Darcy family moves in across the street, Zuri wants nothing to do with their two teenage sons, even as her older sister, Janae, starts to fall for the charming Ainsley. She especially can’t stand the judgmental and arrogant Darius. Yet as Zuri and Darius are forced to find common ground, their initial dislike shifts into an unexpected understanding.</p><p>But with four wild sisters pulling her in different directions, cute boy Warren vying for her attention, and college applications hovering on the horizon, Zuri fights to find her place in Bushwick’s changing landscape, or lose it all.</p><p>\"Zoboi skillfully depicts the vicissitudes of teenage relationships, and Zuri’s outsize pride and poetic sensibility make her a sympathetic teenager in a contemporary story about race, gentrification, and young love.\" (Publishers Weekly, \"An Anti-Racist Children's and YA Reading List\")</p>",
+            "rating": 4
+        }
+    }
+}
+  
+```
+Books by search expample used ("Pride"):
+```
+{
+    "data": [
+        {
+            "id": "ZV9DDwAAQBAJ",
+            "type": "book",
+            "attributes": {
+                "title": "Pride",
+                "authors": [
+                    "Ibi Zoboi"
+                ],
+                "genres": [
+                    "Young Adult Fiction"
+                ],
+                "description": "Pride and Prejudice gets remixed in this smart, funny, gorgeous retelling of the classic, starring all characters of color, from Ibi Zoboi, National Book Award finalist and author of American Street. Zuri Benitez has pride. Brooklyn pride, family pride, and pride in her Afro-Latino roots. But pride might not be enough to save her rapidly gentrifying neighborhood from becoming unrecognizable. When the wealthy Darcy family moves in across the street, Zuri wants nothing to do with their two teenage sons, even as her older sister, Janae, starts to fall for the charming Ainsley. She especially can’t stand the judgmental and arrogant Darius. Yet as Zuri and Darius are forced to find common ground, their initial dislike shifts into an unexpected understanding. But with four wild sisters pulling her in different directions, cute boy Warren vying for her attention, and college applications hovering on the horizon, Zuri fights to find her place in Bushwick’s changing landscape, or lose it all. In a timely update of Jane Austen's Pride and Prejudice, critically acclaimed author Ibi Zoboi skillfully balances cultural identity, class, and gentrification against the heady magic of first love in her vibrant reimagining of this beloved classic.",
+                "rating": 4
+            }
+        },
+        {
+            "id": "1JMsEAAAQBAJ",
+            "type": "book",
+            "attributes": {
+                "title": "The Pride Omnibus",
+                "authors": [
+                    "Joe Glass"
+                ],
+                "genres": [
+                    "Comics & Graphic Novels"
+                ],
+                "description": "Joe Glass's The Pride in a full omnibus trade paperback, collecting volumes 1 and 2 as well as the collection of self-contained stories, The Pride Adventures! In The Pride, FabMan is sick of being seen as a joke. Tired of the LGBTQ+ community being seen as inferior to straight heroes, he thinks it's about damn time he did something about it. Bringing together some of the world's greatest LGBTQ+ superheroes, the Pride is born to protect the world and fight prejudice, misrepresentation and injustice--not to mention a pesky supervillain or two. The Pride Adventures brings a whole host of extra, self-contained stories and adventures starring the heroes of the Pride! See the team members face down crazed shooters, invasions, and even a sixty-foot-tall drag queen! Featuring a slew of incredible artistic talent, plus stories from writers Mike Garley, Sina Grace and PJ Montgomery too! Follow the LGBTQ+ heroes into whole new stories and meet even more characters in the world of The Pride! Join the Pride as they work to change the world and show just what they can do! Collects the original digital series The Pride and The Pride Adventures in print for the first time. \"[F]or readers hungry for queer superheroes. Joe Glass' The Pride introduces a superhero universe built on LGBTQ+ inclusion, following a team that is explicitly created to show the range of the queer experience. The Pride features superheroes who are gay, lesbian, bi, trans, non-binary, and children of gay parents. Glass blends modern queer issues with classic superhero storytelling to tell narratives that classic superhero comics haven't touched. . . . The Pride excels at using queer struggle and joy to show a different side of the superhero genre.\"--AV Club \"I highly recommend this smart, charming, wonderful book to anyone who likes good comics. It's absolutely a pleasure to read and a clear labor of love.\"--Gail Simone, Batgirl, Leaving Megalopolis, Clean Room \"Old-school and progressive at the same time. Classic, high-energy superhero action that gives the queer community the heroes they've always deserved.\"--Steve Orlando, Midnighter, Virgil \"The Pride is the modern, inclusive, and compelling superhero epic the world needs today.\"--Alex Segura, co-writer of The Black Ghost and author of the acclaimed Pete Fernandez Miami Mystery novel series.",
+                "rating": 3
+            }
+        },
+}
+```
+
+Quotes endpoint(s)
 
 | name | data type | description | example |
 | --- | --- | --- | --- |
@@ -108,11 +169,25 @@ Data sourced from [Google Books API](https://developers.google.com/books/docs/v1
 
 Data sourced from [Quote API](https://www.quotes.net/quotes_api.php)
 
-  <details open="open">
-  <summary> JSON example </summary>
-  </details>
+JSON Example 
 
-3. User endpoint(s)
+Random quote:
+```
+{
+    "data": {
+        "id": null,
+        "type": "quote",
+        "attributes": {
+            "quote": "You are who you are, and no one can change that. So be yourself, because no one can do it better.",
+            "author": "Meylin D. Bojorge"
+        }
+    }
+}
+
+```
+
+
+User endpoint(s)
 
 | name | data type | description | example |
 | --- | --- | --- | --- |
