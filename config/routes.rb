@@ -9,8 +9,10 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :show, :create] do
         resources :clubs, only: [:index], controller: 'user_clubs'
       end
-      
-      resources :clubs, only: [:index, :show, :create]
+
+      resources :clubs, only: [:index, :show, :create] do
+        resources :users, only: [:index], controller: 'club_users'
+      end 
     end
   end
 end
