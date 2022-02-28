@@ -6,4 +6,5 @@ class Api::V1::ClubsController < ApplicationController
   def show
     render json: ClubSerializer.new(Club.find(params[:id]))
   end
+
 end
