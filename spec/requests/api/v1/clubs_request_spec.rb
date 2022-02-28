@@ -4,6 +4,7 @@ RSpec.describe "Clubs API" do
   describe "index: 'get /clubs'" do
     describe 'happy path' do
       it 'returns a json object of all clubs' do
+
         club_1 = club_with_users(users_count: 4)
         club_2 = club_with_users(users_count: 3)
         club_3 = club_with_users(users_count: 6)

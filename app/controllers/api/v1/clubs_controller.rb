@@ -17,4 +17,5 @@ class Api::V1::ClubsController < ApplicationController
   def club_params
     params.require(:club).permit(:name, :host_id, :book_id)
   end
+
 end
