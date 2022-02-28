@@ -92,16 +92,17 @@ Available endpoints
 
 1. Books endpoint(s)
 
-| name | data type | description | example |
-| --- | --- | --- | --- |
-| /books/:id | Integer | Returns details of a specific book based on the books id | /api/v1/books/{{book id}} |
-| /books/search | String | Returns a list of books with the title containing the search parameter | /api/v1/books/search?title={{search parameter}} |
+| name | data type | description | example | JSON example |
+| --- | --- | --- | --- | --- |
+| /books/:id | Integer | Returns details of a specific book based on the books id | /api/v1/books/{{book id}} | <details open="open">
+  <summary> JSON example </summary>
+  </details> |
+| /books/search | String | Returns a list of books with the title containing the search parameter | /api/v1/books/search?title={{search parameter}} | <details open="open">
+  <summary> JSON example </summary>
+  </details> |
 
 Data sourced from [Google Books API](https://developers.google.com/books/docs/v1/using)
 
-  <details open="open">
-  <summary> JSON example </summary>
-  </details>
 
 2. Quotes endpoint(s)
 
