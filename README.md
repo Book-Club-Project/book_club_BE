@@ -91,7 +91,7 @@ Implicit
 Available endpoints
 
 | name | data type | description | example |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | /books/:id | Integer | Returns details of a specific book based on the books id | /api/v1/books/{{book id}} |
 | /books/search | String | Returns a list of books with the title containing the search parameter | /api/v1/books/search?title={{search parameter}} |
 | /quote | String | Retruns a random literature quote | /api/v1/quote |
