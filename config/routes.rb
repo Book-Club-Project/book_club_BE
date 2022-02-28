@@ -12,7 +12,10 @@ Rails.application.routes.draw do
 
       resources :clubs, only: [:index, :show, :create] do
         resources :users, only: [:index], controller: 'club_users'
-      end 
+        resources :comments, only: [:index], controller: 'club_comments'
+      end
+
+      resources :comments, only: [:index]
     end
   end
 end
