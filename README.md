@@ -98,9 +98,10 @@ Books endpoint(s)
 | /books/search | String | Returns a list of books with the title containing the search parameter | /api/v1/books/search?title={{search parameter}} |
 
 Data sourced from [Google Books API](https://developers.google.com/books/docs/v1/using)
-
-JSON examples 
-
+ 
+<details>
+  <summary> JSON response examples </summary>
+  
 Single book by id:
 ```
   {
@@ -160,7 +161,8 @@ Books by search expample used ("Pride"):
         },
 }
 ```
-
+  
+</details>
 Quotes endpoint(s)
 
 | name | data type | description | example |
@@ -169,7 +171,8 @@ Quotes endpoint(s)
 
 Data sourced from [Quote API](https://www.quotes.net/quotes_api.php)
 
-JSON Example 
+<details>
+  <summary> JSON response examples </summary>
 
 Random quote:
 ```
@@ -186,6 +189,7 @@ Random quote:
 
 ```
 
+</details>
 
 User endpoint(s)
 
@@ -194,7 +198,11 @@ User endpoint(s)
 | /users | String | Returns all users | /api/v1/users |
 | /users/:id | Integer | Returns a single user based on id | /api/v1/users/{{users id}} |
 
-
+<details>
+  <summary> JSON response examples </summary>
+  
+  
+</details>
 
 
 
