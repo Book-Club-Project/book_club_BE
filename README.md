@@ -94,9 +94,8 @@ Available endpoints
 
 | name | data type | description | example | JSON example |
 | --- | --- | --- | --- | --- |
-| /books/:id | Integer | Returns details of a specific book based on the books id | /api/v1/books/{{book id}} | <details closed="closed">
-  </details> |
-| /books/search | String | Returns a list of books with the title containing the search parameter | /api/v1/books/search?title={{search parameter}} | |
+| /books/:id | Integer | Returns details of a specific book based on the books id | /api/v1/books/{{book id}} | <details closed="closed">  </details> |
+| /books/search | String | Returns a list of books with the title containing the search parameter | /api/v1/books/search?title={{search parameter}} | <details closed="closed">  </details> |
 
 Data sourced from [Google Books API](https://developers.google.com/books/docs/v1/using)
 
