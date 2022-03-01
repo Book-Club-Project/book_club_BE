@@ -182,5 +182,14 @@ RSpec.describe "Clubs API" do
         end
       end
     end
+
+    describe 'destroy: delete /club' do
+      it 'deletes a book club' do
+        club = create :club
+        delete "/api/v1/clubs/#{club.id}"
+        expect(response).to be_successful, status: 204
+        expect(response.body).to be_empty 
+      end
+    end
   end
 end
