@@ -30,14 +30,14 @@ RSpec.describe BookService do
         expect(search.first[:volumeInfo][:categories]).to be_an Array
 
         expect(search.first[:volumeInfo]).to have_key :imageLinks
-        expect(search.first[:volumeInfo][:imageLinks]).to have_key :thumbnail
-        expect(search.first[:volumeInfo][:imageLinks][:thumbnail]).to be_a String
+        expect(search.first[:volumeInfo][:imageLinks]).to have_key :smallThumbnail
+        expect(search.first[:volumeInfo][:imageLinks][:smallThumbnail]).to be_a String
       end
 
       describe 'book_info(book_id)' do
         it 'returns book data for a single volume' do
           book_data = BookService.book_info("ZV9DDwAAQBAJ")
-    
+
           expect(book_data).to be_a Hash
 
           expect(book_data).to have_key(:id)
@@ -65,8 +65,8 @@ RSpec.describe BookService do
           expect(book_data[:volumeInfo][:categories]).to be_an Array
 
           expect(book_data[:volumeInfo]).to have_key :imageLinks
-          expect(book_data[:volumeInfo][:imageLinks]).to have_key :thumbnail
-          expect(book_data[:volumeInfo][:imageLinks][:thumbnail]).to be_a String
+          expect(book_data[:volumeInfo][:imageLinks]).to have_key :smallThumbnail
+          expect(book_data[:volumeInfo][:imageLinks][:smallThumbnail]).to be_a String
         end
       end
     end
