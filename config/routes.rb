@@ -6,11 +6,11 @@ Rails.application.routes.draw do
       get '/quote', to: 'quotes#index'
       resources :books, only: [:index, :show]
 
-      resources :users, only: [:index, :show, :create] do
+      resources :users do
         resources :clubs, only: [:index], controller: 'user_clubs'
       end
 
-      resources :clubs, only: [:index, :show, :create] do
+      resources :clubs do
         resources :users, only: [:index], controller: 'club_users'
         resources :comments, only: [:index], controller: 'club_comments'
       end

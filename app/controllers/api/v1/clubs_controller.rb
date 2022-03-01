@@ -12,6 +12,10 @@ class Api::V1::ClubsController < ApplicationController
     render json: ClubSerializer.new(club), status: 201
   end
 
+  def destroy
+    render json: Club.delete(params[:id]), status: 204
+  end
+
   private
 
   def club_params
