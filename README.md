@@ -26,7 +26,7 @@ reference: [Turing documentation](https://backend.turing.edu/module3/projects/co
       </ul>
     </li>
     <li>
-      <a href="#book-club-api">Book Club API</a>
+      <a href="#APIs">Book Club API</a>
     </li>
     <li><a href="#collaborators">Collaborators</a></li>
   </ol>
@@ -238,7 +238,7 @@ Random quote:
 
 ----------
 
-## **Contributors** ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+## **Collaborators** ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
