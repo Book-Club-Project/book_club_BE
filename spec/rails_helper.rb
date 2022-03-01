@@ -81,5 +81,5 @@ VCR.configure do |config|
   config.filter_sensitive_data('<fake_uid>') { ENV['quote_id'] }
   config.filter_sensitive_data('<fake_token>') { ENV['quote_token'] }
   config.configure_rspec_metadata!
-  onfig.allow_http_connections_when_no_cassette = true
+  config.allow_http_connections_when_no_cassette = true
 end
