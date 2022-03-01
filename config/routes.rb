@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       get '/quote', to: 'quotes#index'
       resources :books, only: [:index, :show]
 
-      resources :users, only: [:index, :show, :create] do
+      resources :users do
         resources :clubs, only: [:index], controller: 'user_clubs'
       end
 
