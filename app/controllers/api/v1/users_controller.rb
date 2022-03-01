@@ -12,6 +12,10 @@ class Api::V1::UsersController < ApplicationController
     render json: UserSerializer.new(user), status: 201
   end
 
+  def destroy
+    render json: User.delete(params[:id]), status: 204
+  end
+
   private
 
   def user_params
