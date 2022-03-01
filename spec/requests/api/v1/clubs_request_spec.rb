@@ -188,7 +188,14 @@ RSpec.describe "Clubs API" do
         club = create :club
         delete "/api/v1/clubs/#{club.id}"
         expect(response).to be_successful, status: 204
-        expect(response.body).to be_empty 
+        expect(response.body).to be_empty
+      end
+
+      describe 'sad path' do
+        it 'cannot find a club to delete' do
+          delete "/api/v1/clubs/999999"
+          expect(response.status).to eq 204
+        end
       end
     end
   end
