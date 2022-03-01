@@ -1,5 +1,5 @@
 class Book
-  attr_reader :title, :authors, :genres, :description, :rating, :id
+  attr_reader :title, :authors, :genres, :description, :rating, :id, :image
   def initialize(data)
     @id = data[:id]
     @title = data[:volumeInfo][:title]
@@ -7,5 +7,6 @@ class Book
     @genres = data[:volumeInfo][:categories]
     @description = data[:volumeInfo][:description]
     @rating = data[:volumeInfo][:averageRating]
+    @image = data[:volumeInfo][:imageLinks][:smallThumbnail]
   end
 end
