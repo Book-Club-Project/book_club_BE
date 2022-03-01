@@ -19,19 +19,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 01 Mar 2022 16:53:11 GMT
+      - Tue, 01 Mar 2022 19:05:49 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '135'
+      - '118'
       Connection:
       - keep-alive
       Set-Cookie:
-      - AWSALB=NqplKqsb+4uomDVrtv8UkdV9BXo9E3y76/ob2Dd68BJFXYtivcJvbE7rMnH+BviEPPX/Nc2O4lseUBmdKuX0zS190GRzi1z/fqo+H2HeW9bStZQgSiu7gEGmtUzX;
-        Expires=Tue, 08 Mar 2022 16:53:11 GMT; Path=/
-      - AWSALBCORS=NqplKqsb+4uomDVrtv8UkdV9BXo9E3y76/ob2Dd68BJFXYtivcJvbE7rMnH+BviEPPX/Nc2O4lseUBmdKuX0zS190GRzi1z/fqo+H2HeW9bStZQgSiu7gEGmtUzX;
-        Expires=Tue, 08 Mar 2022 16:53:11 GMT; Path=/; SameSite=None; Secure
-      - PHPSESSID=hq5htdq5q3ftebdu0oj0e9ul84; path=/
+      - AWSALB=Zfh7Ykbg2WuIv4GJITFJjr8qCyppX+/b7g9nu4w76bBVCNPHizA8Wvj24WO0pyjasUUlF+4m6DiXZB73AzW9Mm0lIkqtfDHrCkvORg7Yp8TN1JjXF8fphTE0A7ly;
+        Expires=Tue, 08 Mar 2022 19:05:49 GMT; Path=/
+      - AWSALBCORS=Zfh7Ykbg2WuIv4GJITFJjr8qCyppX+/b7g9nu4w76bBVCNPHizA8Wvj24WO0pyjasUUlF+4m6DiXZB73AzW9Mm0lIkqtfDHrCkvORg7Yp8TN1JjXF8fphTE0A7ly;
+        Expires=Tue, 08 Mar 2022 19:05:49 GMT; Path=/; SameSite=None; Secure
+      - PHPSESSID=osr04ljc6h87ne3kummkeg4053; path=/
       Server:
       - Apache/2.4.51 (Amazon) PHP/7.0.33
       X-Powered-By:
@@ -51,14 +51,14 @@ http_interactions:
       Accept-Ranges:
       - bytes
       X-Varnish:
-      - '113917820'
+      - '114314944'
       Age:
       - '0'
       Via:
       - 1.1 varnish
     body:
       encoding: ASCII-8BIT
-      string: '{"result":{"quote":"You are who you are, and no one can change that.
-        So be yourself, because no one can do it better.","author":"Meylin D. Bojorge"}}'
-  recorded_at: Tue, 01 Mar 2022 16:53:11 GMT
+      string: '{"result":{"quote":"The water from the river becomes salty when it
+        gets into the ocean.","author":"Vikrant Parsai"}}'
+  recorded_at: Tue, 01 Mar 2022 19:05:49 GMT
 recorded_with: VCR 6.0.0
