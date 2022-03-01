@@ -19,19 +19,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 01 Mar 2022 16:53:09 GMT
+      - Tue, 01 Mar 2022 19:05:47 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '112'
+      - '135'
       Connection:
       - keep-alive
       Set-Cookie:
-      - AWSALB=YerlhjEdjYlQ0x06tcNYfBlcrkWyksyrnlwU5jVjXOpDpTGuY6ru+YER2Ym0FeyCs5O3tRNK2CLOLKUiRu4+AuWMxK4hrd3Iz5PwLgGEqVTVf9tu0TpI5KjcXfyw;
-        Expires=Tue, 08 Mar 2022 16:53:09 GMT; Path=/
-      - AWSALBCORS=YerlhjEdjYlQ0x06tcNYfBlcrkWyksyrnlwU5jVjXOpDpTGuY6ru+YER2Ym0FeyCs5O3tRNK2CLOLKUiRu4+AuWMxK4hrd3Iz5PwLgGEqVTVf9tu0TpI5KjcXfyw;
-        Expires=Tue, 08 Mar 2022 16:53:09 GMT; Path=/; SameSite=None; Secure
-      - PHPSESSID=f1fg29g39bk7gsd1v5cmnribe4; path=/
+      - AWSALB=KPHJQQan/MpGcz+D2OEuCjxAo6Aet12MNjBQgujKSEVN8CCaKzOsAYBtT4UqJu0zPm7ZjoSU92F5alJLZJMvoyty6Z3oxyjEayCmcEOeQJX4DquOCiFzZhl57Ya6;
+        Expires=Tue, 08 Mar 2022 19:05:47 GMT; Path=/
+      - AWSALBCORS=KPHJQQan/MpGcz+D2OEuCjxAo6Aet12MNjBQgujKSEVN8CCaKzOsAYBtT4UqJu0zPm7ZjoSU92F5alJLZJMvoyty6Z3oxyjEayCmcEOeQJX4DquOCiFzZhl57Ya6;
+        Expires=Tue, 08 Mar 2022 19:05:47 GMT; Path=/; SameSite=None; Secure
+      - PHPSESSID=dq16jr9ikob5qoltu1m53a77s7; path=/
       Server:
       - Apache/2.4.51 (Amazon) PHP/7.0.33
       X-Powered-By:
@@ -51,14 +51,14 @@ http_interactions:
       Accept-Ranges:
       - bytes
       X-Varnish:
-      - '301113020'
+      - '960423646'
       Age:
       - '0'
       Via:
       - 1.1 varnish
     body:
       encoding: ASCII-8BIT
-      string: '{"result":{"quote":"So live that your memories will be part of your
-        happiness.","author":"Author Unknown"}}'
-  recorded_at: Tue, 01 Mar 2022 16:53:09 GMT
+      string: '{"result":{"quote":"You are who you are, and no one can change that.
+        So be yourself, because no one can do it better.","author":"Meylin D. Bojorge"}}'
+  recorded_at: Tue, 01 Mar 2022 19:05:47 GMT
 recorded_with: VCR 6.0.0
