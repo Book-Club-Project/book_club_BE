@@ -82,8 +82,7 @@ Implicit
 
 ## Database Schema
 
-![Screen Shot 2022-02-22 at 10 31 07 AM](https://user-images.githubusercontent.com/87088092/155647400-97e86edd-30ad-4652-b53b-f26fd5ac429d.png)
-
+![Screen Shot 2022-03-01 at 11 06 06 AM](https://user-images.githubusercontent.com/69017022/156225150-ab72f4ed-f274-4e08-b0d3-9d843f6521c4.png)
 
 ----------
 
