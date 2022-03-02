@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
       resources :clubs, only: [:index, :show, :create] do
         resources :users, only: [:index], controller: 'club_users'
-        resources :comments, only: [:index, :delete], controller: 'club_comments'
+        resources :comments, only: [:index, :destroy], controller: 'club_comments'
       end
 
       resources :comments
