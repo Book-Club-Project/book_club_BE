@@ -5,6 +5,7 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of(:username) }
     it { should validate_presence_of(:email) }
     it { should validate_uniqueness_of(:email).case_insensitive }
+    it { should validate_uniqueness_of(:username) }
   end
 
   describe 'relationships' do
@@ -18,6 +19,7 @@ RSpec.describe User, type: :model do
       test_user = User.create(username: 'SierraTest', email: 'sierra@test.com', password: 'test12', password_confirmation: 'test12')
       expect(test_user).to_not have_attribute(:password)
       expect(test_user).to_not have_attribute(:password_confirmation)
+      require "pry"; binding.pry
       expect(test_user.password_digest).to_not eq('test12')
     end
   end
