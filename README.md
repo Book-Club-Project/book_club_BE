@@ -92,16 +92,16 @@ Available endpoints
 
 <h3> Books endpoint(s) </h3>
 
-| name | data type | description | example |
-| --- | --- | --- | --- |
-| /books/:id | Integer | Returns details of a specific book based on the books id | /api/v1/books/{{book id}} | 
-| /books/search | String | Returns a list of books with the title containing the search parameter | /api/v1/books/search?title={{search parameter}} |
+| http verb | name | data type | description | example |
+| --- | --- | --- | --- | --- |
+| GET | /books/:id | Integer | Returns details of a specific book based on the books id | /api/v1/books/{{book id}} |
+| GET | /books/search | String | Returns a list of books with the title containing the search parameter | /api/v1/books/search?title={{search parameter}} |
 
 Data sourced from [Google Books API](https://developers.google.com/books/docs/v1/using)
- 
+
 <details>
     <summary> JSON response examples </summary>
-  
+
 Single book by id:
 ```
   {
@@ -123,9 +123,9 @@ Single book by id:
         }
     }
 }
-  
+
 ```
-Books by search expample used ("Pride"):
+Books by search example used ("Pride"):
 ```
 {
     "data": [
@@ -161,15 +161,15 @@ Books by search expample used ("Pride"):
         },
 }
 ```
-  
+
 </details>
 
 
 <h3> Quotes endpoint(s) </h3>
 
-| name | data type | description | example |
-| --- | --- | --- | --- |
-| /quote | String | Returns a random literature quote | /api/v1/quote |
+| http verb | name | data type | description | example |
+| --- | --- | --- | --- | --- |
+| GET | /quote | String | Returns a random literature quote | /api/v1/quote |
 
 Data sourced from [Quote API](https://www.quotes.net/quotes_api.php)
 
@@ -196,43 +196,315 @@ Random quote:
 
 <h3> User endpoint(s) </h3>
 
-| name | data type | description | example |
-| --- | --- | --- | --- |
-| /users | String | Returns all users | /api/v1/users |
-| /users/:id | Integer | Returns a single user based on id | /api/v1/users/{{users id}} |
+| http verb | name | data type | description | example |
+| --- | --- | --- | --- | --- |
+| GET | /users | String | Returns all users | /api/v1/users |
+| GET | /users/:id | Integer | Returns a single user based on id | /api/v1/users/{{users id}} |
+| GET | /users/:id/clubs | String | Returns all clubs that a specific user belongs to | /api/v1/users/{{user_id}}/clubs
 
 <details>
   <summary> JSON response examples </summary>
-  
-  
+
+All users:
+```
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "user",
+            "attributes": {
+                "username": "1",
+                "email": "1@mail.com"
+            }
+        },
+        {
+            "id": "2",
+            "type": "user",
+            "attributes": {
+                "username": "2",
+                "email": "2@mail.com"
+            }
+        },
+        {
+            "id": "3",
+            "type": "user",
+            "attributes": {
+                "username": "3",
+                "email": "3@mail.com"
+            }
+        },
+        {
+            "id": "4",
+            "type": "user",
+            "attributes": {
+                "username": "4",
+                "email": "4@mail.com"
+            }
+        }
+    ]
+}
+```
+Single user by id
+```
+{
+    "data": {
+        "id": "1",
+        "type": "user",
+        "attributes": {
+            "username": "1",
+            "email": "1@mail.com"
+        }
+    }
+}
+```
+All of a specific user's association with clubs:
+```
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "club",
+            "attributes": {
+                "name": "Cool Cats",
+                "host_id": 1,
+                "book_id": 3
+            }
+        }
+    ]
+}
+```
 </details>
 
 
 <h3> Clubs endpoint(s) </h3>
 
-| name | data type | description | example |
-| --- | --- | --- | --- |
-| /clubs | String | Returns all clubs | /api/v1/clubs |
-| /users/:id | Integer | Returns a single club based on id | /api/v1/clubs/{{club id}} |
+| http verb | name | data type | description | example |
+| --- | --- | --- | --- | --- |
+| GET | /clubs | String | Returns all clubs | /api/v1/clubs |
+| GET | /clubs/:id | Integer | Returns a single club based on id | /api/v1/clubs/{{club id}} |
+| GET | /clubs/:id/users | String | Returns all users belonging to a specific club | /api/v1/clubs/{{club_id}}/users |
+| GET | /clubs/:id/comments | String | Returns all comments belonging to a specific club | /api/v1/clubs/{{club_id}}/comments |
+
 
 <details>
   <summary> JSON response examples </summary>
-  
-  
+
+All clubs:
+```
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "club",
+            "attributes": {
+                "name": "Cool Cats",
+                "host_id": 1,
+                "book_id": 3
+            }
+        },
+        {
+            "id": "2",
+            "type": "club",
+            "attributes": {
+                "name": "Turing Nerds",
+                "host_id": 2,
+                "book_id": 6
+            }
+        },
+        {
+            "id": "3",
+            "type": "club",
+            "attributes": {
+                "name": "Sherlock Homies",
+                "host_id": 3,
+                "book_id": 7
+            }
+        }
+    ]
+}
+```
+Single club by id:
+```
+{
+    "data": {
+        "id": "1",
+        "type": "club",
+        "attributes": {
+            "name": "Cool Cats",
+            "host_id": 1,
+            "book_id": 3
+        }
+    }
+}
+```
+A specific club's users:
+```
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "user",
+            "attributes": {
+                "username": "1",
+                "email": "1@mail.com"
+            }
+        },
+        {
+            "id": "2",
+            "type": "user",
+            "attributes": {
+                "username": "2",
+                "email": "2@mail.com"
+            }
+        },
+        {
+            "id": "3",
+            "type": "user",
+            "attributes": {
+                "username": "3",
+                "email": "3@mail.com"
+            }
+        },
+        {
+            "id": "4",
+            "type": "user",
+            "attributes": {
+                "username": "4",
+                "email": "4@mail.com"
+            }
+        }
+    ]
+}
+```
+A specific club's comments:
+```
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "comment",
+            "attributes": {
+                "title": "Hello",
+                "body": "Blah",
+                "user_id": 1,
+                "club_id": 1
+            }
+        },
+        {
+            "id": "2",
+            "type": "comment",
+            "attributes": {
+                "title": "Comments",
+                "body": "Blah Blah",
+                "user_id": 2,
+                "club_id": 1
+            }
+        },
+        {
+            "id": "3",
+            "type": "comment",
+            "attributes": {
+                "title": "Coolio",
+                "body": "Blah Blah Blah",
+                "user_id": 3,
+                "club_id": 1
+            }
+        },
+        {
+            "id": "4",
+            "type": "comment",
+            "attributes": {
+                "title": "Goodbye",
+                "body": "Blah Blah Blah Blah",
+                "user_id": 4,
+                "club_id": 1
+            }
+        }
+    ]
+}
+```
 </details>
 
 
 <h3> Comments endpoint(s) </h3>
 
-| name | data type | description | example |
-| --- | --- | --- | --- |
-| /comments | String | Returns all comments | /api/v1/comments |
+| http verb | name | data type | description | example |
+| --- | --- | --- | --- | --- |
+| GET | /comments | String | Returns all comments | /api/v1/comments |
+| POST | /comments | String | Creates a new comment |  /api/v1/comments |
+| DELETE | /comments | String | Deletes a comment | /api/v1/comments |
 
 
 <details>
   <summary> JSON response examples </summary>
-  
-  
+
+All comments:
+```
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "comment",
+            "attributes": {
+                "title": "Hello",
+                "body": "Blah",
+                "user_id": 1,
+                "club_id": 1
+            }
+        },
+        {
+            "id": "2",
+            "type": "comment",
+            "attributes": {
+                "title": "Comments",
+                "body": "Blah Blah",
+                "user_id": 2,
+                "club_id": 1
+            }
+        },
+        {
+            "id": "3",
+            "type": "comment",
+            "attributes": {
+                "title": "Coolio",
+                "body": "Blah Blah Blah",
+                "user_id": 3,
+                "club_id": 1
+            }
+        },
+        {
+            "id": "4",
+            "type": "comment",
+            "attributes": {
+                "title": "Goodbye",
+                "body": "Blah Blah Blah Blah",
+                "user_id": 4,
+                "club_id": 1
+            }
+        },
+        {
+            "id": "5",
+            "type": "comment",
+            "attributes": {
+                "title": "Goodbye",
+                "body": "Blah Blah Blah Blah",
+                "user_id": 4,
+                "club_id": 2
+            }
+        },
+        {
+            "id": "6",
+            "type": "comment",
+            "attributes": {
+                "title": "Goodbye",
+                "body": "Blah Blah Blah Blah",
+                "user_id": 4,
+                "club_id": 3
+            }
+        }
+    ]
+}
+```
 </details>
 
 
