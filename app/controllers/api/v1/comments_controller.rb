@@ -8,6 +8,11 @@ class Api::V1::CommentsController < ApplicationController
     render json: CommentSerializer.new(comment), status: 201
   end
 
+  def destroy
+    comment = Comment.find(params[:id])
+    comment.delete
+  end
+
   private
 
   def comment_params
