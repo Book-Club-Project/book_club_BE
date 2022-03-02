@@ -21,7 +21,7 @@ RSpec.describe "Clubs API" do
           expect(club[:id]).to be_a String
           expect(club[:attributes][:name]).to be_a String
           expect(club[:attributes][:host_id]).to be_an Integer
-          expect(club[:attributes][:book_id]).to be_an Integer
+          expect(club[:attributes][:book_id]).to be_an String
         end
       end
     end
@@ -55,7 +55,7 @@ RSpec.describe "Clubs API" do
         expect(club[:data][:id]).to be_a String
         expect(club[:data][:attributes][:name]).to be_a String
         expect(club[:data][:attributes][:host_id]).to be_an Integer
-        expect(club[:data][:attributes][:book_id]).to be_an Integer
+        expect(club[:data][:attributes][:book_id]).to be_an String
       end
     end
 
@@ -75,7 +75,7 @@ RSpec.describe "Clubs API" do
         user = create(:user)
         club_params = ({name: 'Sherlock Homies',
                         host_id: user.id,
-                        book_id: 9999})
+                        book_id: "9999"})
         headers = {"CONTENT_TYPE" => "application/json"}
         post api_v1_clubs_path, headers: headers, params: JSON.generate(club: club_params)
         created_club = Club.last
@@ -90,7 +90,7 @@ RSpec.describe "Clubs API" do
     describe 'sad paths' do
       it 'does not create the new club if any attributes are missing and returns invalid error' do
         club_params = ({name: 'Sherlock Homies',
-                        book_id: 9999})
+                        book_id: "9999"})
         headers = {"CONTENT_TYPE" => "application/json"}
         post api_v1_clubs_path, headers: headers, params: JSON.generate(club: club_params)
 
@@ -101,7 +101,7 @@ RSpec.describe "Clubs API" do
         user = create(:user)
         club_params = ({name: 'Sherlock Homies',
                         host_id: user.id,
-                        book_id: 9999,
+                        book_id: "9999",
                         non_permitted_attribute: 'wooohooooo'})
         headers = {"CONTENT_TYPE" => "application/json"}
         post api_v1_clubs_path, headers: headers, params: JSON.generate(club: club_params)

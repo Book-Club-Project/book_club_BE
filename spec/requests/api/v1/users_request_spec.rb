@@ -134,7 +134,7 @@ describe "Users API" do
           expect(club).to have_key(:attributes)
           expect(club[:attributes][:name]).to be_a String
           expect(club[:attributes][:host_id]).to be_an Integer
-          expect(club[:attributes][:book_id]).to be_an Integer
+          expect(club[:attributes][:book_id]).to be_an String
         end
       end
     end

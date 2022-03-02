@@ -1,6 +1,7 @@
 class Book
   attr_reader :title, :authors, :genres, :description, :rating, :id, :image
   def initialize(data)
+
     @id = data[:id]
     @title = data[:volumeInfo][:title]
     @authors = data[:volumeInfo][:authors]
