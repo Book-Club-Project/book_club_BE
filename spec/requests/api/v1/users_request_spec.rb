@@ -150,6 +150,18 @@ describe "Users API" do
     end
   end
 
+  describe 'update a user' do
+    describe 'happy path' do
+      it 'updates a user' do
+        create(:user, id: 1)
+        # binding.pry
+      end
+    end
+
+    describe 'sad path' do
+    end
+  end
+
   describe 'deletes a user' do
     it "finds a user by id and deletes them" do
       user_1 = create(:user, id: 1)
@@ -158,6 +170,14 @@ describe "Users API" do
 
       expect(response.status).to eq(204)
       expect(response.body).to be_empty
+    end
+
+    it "finds a user by id and deletes them" do
+      user_1 = create(:user, id: 1)
+
+      delete api_v1_user_path(666)
+
+      expect(response.status).to eq(404)
     end
   end
 end
