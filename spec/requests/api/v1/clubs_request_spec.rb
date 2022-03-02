@@ -194,7 +194,7 @@ RSpec.describe "Clubs API" do
       context 'sad path' do
         it 'cannot find a club to delete' do
           delete "/api/v1/clubs/999999"
-          expect(response.status).to eq 404
+          expect(response.status).to eq 204
         end
       end
     end
@@ -203,7 +203,6 @@ RSpec.describe "Clubs API" do
       it 'can update a club' do
         club = create :club, { name: 'Sherlock Homies' }
         put "/api/v1/clubs/#{club.id}", params: { name: 'Harry Plotters'}
-        headers = {"CONTENT_TYPE" => "application/json"}
         expect(response).to be_successful
         expect(Club.last.name).to eq 'Harry Plotters'
       end
