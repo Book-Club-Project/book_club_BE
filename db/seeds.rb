@@ -5,9 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-cool_cats_club = Club.create(name: 'Cool Cats', host_id: 1, book_id: 3)
-cool_cats_club_2 = Club.create(name: 'Turing Nerds', host_id: 2, book_id: 6)
-cool_cats_club_3 = Club.create(name: 'Sherlock Homies', host_id: 3, book_id: 7)
+cool_cats_club = Club.create(name: 'Cool Cats', host_id: 1, book_id: "ZV9DDwAAQBAJ")
+cool_cats_club_2 = Club.create(name: 'Turing Nerds', host_id: 2, book_id: "1JMsEAAAQBAJ")
+cool_cats_club_3 = Club.create(name: 'Sherlock Homies', host_id: 3, book_id: "tQPECgAAQBAJ")
 
 user_1 = User.create(username:'1', email: '1@mail.com')
 user_2 = User.create(username:'2', email: '2@mail.com')
