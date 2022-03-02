@@ -22,4 +22,16 @@ RSpec.describe Comment, type: :model do
     expect(User.exists?(user.id)).to eq(true)
     expect(Comment.exists?(comment_2.id)).to eq(true)
   end
+
+  it 'deletes a comment without deleting a club' do
+    club = create(:club, id: 1)
+    comment_1 = create(:comment, id: 1, club_id: 1)
+    comment_2 = create(:comment, id: 2, club_id: 1)
+
+    comment_1.destroy
+
+    expect(Comment.exists?(comment_1.id)).to eq(false)
+    expect(Club.exists?(club.id)).to eq(true)
+    expect(Comment.exists?(comment_2.id)).to eq(true)
+  end
 end
