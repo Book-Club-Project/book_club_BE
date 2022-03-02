@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 2022_02_28_034059) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "comments", "clubs"
-  add_foreign_key "comments", "users"
+  add_foreign_key "comments", "clubs", on_delete: :cascade
+  add_foreign_key "comments", "users", on_delete: :cascade
   add_foreign_key "user_clubs", "clubs"
   add_foreign_key "user_clubs", "users"
 end
