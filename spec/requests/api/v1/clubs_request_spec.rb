@@ -194,7 +194,7 @@ RSpec.describe "Clubs API" do
       context 'sad path' do
         it 'cannot find a club to delete' do
           delete "/api/v1/clubs/999999"
-          expect(response.status).to eq 204
+          expect(response.status).to eq 404
         end
       end
     end
