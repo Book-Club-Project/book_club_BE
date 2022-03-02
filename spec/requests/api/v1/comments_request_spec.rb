@@ -92,4 +92,19 @@ RSpec.describe 'comments API' do
       end
     end
   end
+
+  describe 'deletes comments' do
+    describe 'happy path' do
+      it 'deletes comments' do
+        club_1 = club_with_comments(comments_count: 5)
+        comments = JSON.parse(response.body, symbolize_names: true)
+  
+        delete api_v1_comments_path
+
+      end
+    end
+
+    describe 'sad path' do
+    end
+  end
 end
