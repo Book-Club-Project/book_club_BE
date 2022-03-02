@@ -27,6 +27,7 @@ RSpec.describe "books API" do
     expect(books).to be_an(Hash)
 
     books.each do |book|
+
       expect(book[1][0][:attributes][:title]).to eq("Pride")
       expect(book[1][0][:attributes][:authors]).to eq(["Ibi Zoboi"])
       expect(book[1][0][:attributes][:genres]).to eq(["Young Adult Fiction"])
