@@ -10,7 +10,7 @@ RSpec.describe User, type: :model do
   describe 'relationships' do
     it { should have_many(:user_clubs) }
     it { should have_many(:clubs).through(:user_clubs) }
-    it { should have_many(:comments).dependent(:destroy) }
+    it { should have_many(:comments) }
   end
 
   describe 'test of password validations' do
@@ -20,5 +20,17 @@ RSpec.describe User, type: :model do
       expect(test_user).to_not have_attribute(:password_confirmation)
       expect(test_user.password_digest).to_not eq('test12')
     end
+  end
+
+  it 'deletes a user and their  associated comments' do
+    user = create(:user, id: 1)
+    comment_1 = create(:comment, id: 1, user_id: 1)
+    comment_2 = create(:comment, id: 2, user_id: 1)
+
+    user.destroy
+
+    expect(Comment.exists?(comment_1.id)).to eq(false)
+    expect(User.exists?(user.id)).to eq(false)
+    expect(Comment.exists?(comment_2.id)).to eq(false)
   end
 end
