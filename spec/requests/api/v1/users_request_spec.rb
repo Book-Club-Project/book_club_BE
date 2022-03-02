@@ -151,13 +151,25 @@ describe "Users API" do
   end
 
   describe 'deletes a user' do
-    it "finds a user by id and deletes them" do
-      user_1 = create(:user, id: 1)
+    describe 'happy path' do
+      it "finds a user by id and deletes them" do
+        user_1 = create(:user, id: 1)
 
-      delete api_v1_user_path(1)
+        delete api_v1_user_path(1)
 
-      expect(response.status).to eq(204)
-      expect(response.body).to be_empty
+        expect(response.status).to eq(204)
+        expect(response.body).to be_empty
+      end
+    end
+
+    describe 'sad path' do
+      it 'cannot find the record to delete and returns an error' do
+        user_1 = create(:user, id: 1)
+
+        delete api_v1_user_path(99999)
+
+        expect(response.status).to eq(204)
+      end
     end
   end
 end
