@@ -9,7 +9,8 @@ class Api::V1::CommentsController < ApplicationController
   end
 
   def destroy
-    render json: Comment.delete(params[:id]), status: 204
+    comment = Comment.find(params[:id])
+    comment.delete
   end
 
   private

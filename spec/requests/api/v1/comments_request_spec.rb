@@ -131,7 +131,7 @@ RSpec.describe 'comments API' do
 
         delete api_v1_comment_path(created_comment.id + 1)
 
-        expect(response.status).to eq(204)
+        expect(response.status).to eq(404)
       end
     end
   end

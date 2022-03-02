@@ -162,7 +162,6 @@ describe "Users API" do
         expect(response.status).to eq(200)
         expect(user.username).to eq("Reads_at_a_5th_grade_Level")
         expect(user.username).to_not eq(previous_username)
-
         expect(user.email).to eq(User.last.email)
       end
     end
