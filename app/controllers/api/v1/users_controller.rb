@@ -17,7 +17,7 @@ class Api::V1::UsersController < ApplicationController
     if user.update(user_params)
       render json: UserSerializer.new(user), status: 200
     else
-      render json: { data: "User cannot be updated. Please check your input"}, status: 400
+      render json: { data: "User cannot be updated. Please check your input"}
     end
   end
 

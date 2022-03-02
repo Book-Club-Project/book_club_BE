@@ -153,12 +153,28 @@ describe "Users API" do
   describe 'update a user' do
     describe 'happy path' do
       it 'updates a user' do
-        create(:user, id: 1)
-        # binding.pry
+        user_id = create(:user, id: 1).id
+        previous_username = User.last.username
+        user_params = { username: "Reads_at_a_5th_grade_Level" }
+        headers = {"CONTENT_TYPE" => "application/json"}
+        patch api_v1_user_path(1), headers: headers, params: JSON.generate({user: user_params})
+        user = User.find_by(id: user_id)
+        expect(response.status).to eq(200)
+        expect(user.username).to eq("Reads_at_a_5th_grade_Level")
+        expect(user.email).to eq(User.last.email)
       end
     end
 
     describe 'sad path' do
+      it 'cannot update a user if no updated params are given' do
+        user_id = create(:user, id: 1).id
+        username = User.last.username
+        headers = {"CONTENT_TYPE" => "application/json"}
+        patch api_v1_user_path(1), headers: headers, params: JSON.generate({user: { username: User.last.username }})
+        user = User.find_by(id: user_id)
+        expect(user.username).to eq(username)
+        expect(response.status).to eq(200)
+      end
     end
   end
 
