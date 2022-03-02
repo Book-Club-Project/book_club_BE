@@ -89,6 +89,8 @@ Implicit
 ## APIs
 Available endpoints
 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/918e865de1f64267f728?action=collection%2Fimport)
+
 <h3> Books endpoint(s) </h3>
 
 | name | data type | description | example |
