@@ -149,4 +149,52 @@ describe "Users API" do
       end
     end
   end
+
+  describe 'update a user' do
+    describe 'happy path' do
+      it 'updates a user' do
+        user_id = create(:user, id: 1).id
+        previous_username = User.last.username
+        user_params = { username: "Reads_at_a_5th_grade_Level" }
+        headers = {"CONTENT_TYPE" => "application/json"}
+        patch api_v1_user_path(1), headers: headers, params: JSON.generate({user: user_params})
+        user = User.find_by(id: user_id)
+        expect(response.status).to eq(200)
+        expect(user.username).to eq("Reads_at_a_5th_grade_Level")
+        expect(user.username).to_not eq(previous_username)
+        expect(user.email).to eq(User.last.email)
+      end
+    end
+
+    describe 'sad path' do
+      it 'cannot update a user if no updated params are given' do
+        user_id = create(:user, id: 1).id
+        username = User.last.username
+        headers = {"CONTENT_TYPE" => "application/json"}
+        patch api_v1_user_path(1), headers: headers, params: JSON.generate({user: { username: User.last.username }})
+        user = User.find_by(id: user_id)
+        expect(user.username).to eq(username)
+        expect(response.status).to eq(200)
+      end
+    end
+  end
+
+  describe 'deletes a user' do
+    it "finds a user by id and deletes them" do
+      user_1 = create(:user, id: 1)
+
+      delete api_v1_user_path(1)
+
+      expect(response.status).to eq(204)
+      expect(response.body).to be_empty
+    end
+
+    it "finds a user by id and deletes them" do
+      user_1 = create(:user, id: 1)
+
+      delete api_v1_user_path(666)
+
+      expect(response.status).to eq(404)
+    end
+  end
 end

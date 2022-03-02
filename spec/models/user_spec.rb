@@ -10,7 +10,7 @@ RSpec.describe User, type: :model do
   describe 'relationships' do
     it { should have_many(:user_clubs) }
     it { should have_many(:clubs).through(:user_clubs) }
-    it { should have_many(:comments) }
+    it { should have_many(:comments).dependent(:destroy) }
   end
 
   describe 'test of password validations' do
