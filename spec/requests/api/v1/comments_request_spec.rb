@@ -96,11 +96,22 @@ RSpec.describe 'comments API' do
   describe 'deletes comments' do
     describe 'happy path' do
       it 'deletes comments' do
-        club_1 = club_with_comments(comments_count: 5)
-        comments = JSON.parse(response.body, symbolize_names: true)
-  
-        delete api_v1_comments_path
+        user = create(:user)
+        club = create(:club)
+        comment_params = ({
+                    title: 'Best book ever!',
+                    body: 'I thought that ending was fire! Would love to hear opinions!',
+                    user_id: user.id,
+                    club_id: club.id,
+                    })
+        headers = {"CONTENT_TYPE" => "application/json"}
+        post api_v1_comments_path, headers: headers, params: JSON.generate(comment: comment_params)
+        created_comment = Comment.last
 
+        delete api_v1_comment_path(created_comment.id)
+
+        expect(response.status).to eq(204)
+        expect(response.body).to be_empty
       end
     end
 
