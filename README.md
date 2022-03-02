@@ -2,6 +2,10 @@
 # Mod3 Group Consultancy Project
 #####  (this repo is used with the [Book Club app](https://github.com/Book-Club-Project/book_club_FE))
 
+## Project Description
+
+This is a back-end project designed to exercise the fundamental basics of exposing and consuming an API.  Book Club builds community through literature. Users can connect through groups, messaging, and a bountiful resource of books. Functionality is achieved by combining our own database, the Google Books API, and external communication APIs to allow real-time communication, discussions, and recommendations.
+
 reference: [Turing documentation](https://backend.turing.edu/module3/projects/consultancy)
 
 <details open="open">
@@ -36,12 +40,26 @@ reference: [Turing documentation](https://backend.turing.edu/module3/projects/co
 
 ## Getting Started
 
-----------
+### Set Up
+On your local system, open a terminal session to run the following commands:
+1. Clone this repository `$ git clone git@github.com:Sierra-T-9598/rails-engine.git`
+2. Navigate to the newly cloned directory `$ cd rails-engine`
+3. If bundler is not installed run `$ gem install bundler` 
+4. If or after bundler is installed run `$ bundle install` to install the required Gems
+5. If errors occur, check for proper installation and versions of `bundler`, `ruby`, and `rails`
+6. Set up the database locally with `$ rails db:{:drop,:create,:migrate,:seed}` 
+7. Open your text editor and check to see that `schema.rb` exists
+8. You may also run the RSpec test suite locally with the command `$ bundle exec rspec` to ensure everything is functioning as expected.
 
-## Project Description
+### Use of this Backend Repository 
+On your command line: 
+1. Run `$ rails s` in order to start the server locally to access the app through a web browser
+2. Open a web browser and navigate to http://localhost:3000/
+3. Now you may explore the API using the available endpoints listed below!
 
-This is a back-end project designed to exercise the fundamental basics of exposing and consuming an API.  Book Club builds community through literature. Users can connect through groups, messaging, and a bountiful resource of books. Functionality is achieved by combining our own database, the Google Books API, and external communication APIs to allow real-time communication, discussions, and recommendations.
-
+### Use of the BookClub Application
+On you command line: 
+1. Start the Backend server with `$ rails s` and navigate to http://localhost:5000/ to interact with the [Frontend](https://github.com/Book-Club-Project/book_club_FE)
 ----------
 
 ## Learning Goals for Project:
