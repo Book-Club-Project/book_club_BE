@@ -2,10 +2,6 @@
 # Mod3 Group Consultancy Project
 #####  (this repo is used with the [Book Club app](https://github.com/Book-Club-Project/book_club_FE))
 
-## Project Description
-
-This is a back-end project designed to exercise the fundamental basics of exposing and consuming an API.  Book Club builds community through literature. Users can connect through groups, messaging, and a bountiful resource of books. Functionality is achieved by combining our own database, the Google Books API, and external communication APIs to allow real-time communication, discussions, and recommendations.
-
 reference: [Turing documentation](https://backend.turing.edu/module3/projects/consultancy)
 
 <details open="open">
@@ -13,24 +9,37 @@ reference: [Turing documentation](https://backend.turing.edu/module3/projects/co
   <ol>
     <li>
       <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#set-up">Set Up</a></li>
+        <li><a href="#use-of-this-repository">Use of this Repository</a>
+          <ul>
+            <li>Frontend Server</li>
+            <li>Backend Server</li>
+          </ul>
+        </li>
     </li>
+    </ul>
     <li>
       <a href="#project-description">About This Project</a>
       <ul>
         <li><a href="#learning-goals-for-project">Learning Goals for Project</a></li>
-      </ul>
-      <ul>
         <li><a href="#versions">Versions</a></li>
-      </ul>
-      <ul>
         <li><a href="#important-gems">Important Gems</a></li>
-      </ul>
-      <ul>
         <li><a href="#database-schema">Database Schema</a></li>
       </ul>
     </li>
     <li>
-      <a href="#APIs">Book Club API</a>
+      <a href="#apis">Book Club API</a>
+      <details>
+        <summary>Available Endpoints</summary>
+        <ul>
+          <li><a href="#books-endpoints">Books Endpoints</a></li>
+          <li><a href="#quotes-endpoints">Quotes Endpoints</a></li>
+          <li><a href="#user-endpoints">User Endpoints</a></li>
+          <li><a href="#clubs-endpoints">Clubs Endpoints</a></li>
+          <li><a href="#comments-endpoints">Comments Endpoints</a></li>
+        </ul>
+      </details>
     </li>
     <li><a href="#collaborators">Collaborators</a></li>
   </ol>
@@ -51,16 +60,30 @@ On your local system, open a terminal session to run the following commands:
 7. Open your text editor and check to see that `schema.rb` exists
 8. You may also run the RSpec test suite locally with the command `$ bundle exec rspec` to ensure everything is functioning as expected.
 
-### Use of this Backend Repository
-On your command line:
-1. Run `$ rails s` in order to start the server locally to access the app through a web browser
-2. Open a web browser and navigate to http://localhost:3000/
-3. Now you may explore the API using the available endpoints listed below!
+### Use of this Repository
+In order to run this application you need both this Backend Repository and the associated [Frontend Repository](https://github.com/Book-Club-Project/book_club_FE)
 
-### Use of the BookClub Application
+**Frontend Server**
+ 
+For a full explanation to set-up the frontend server, please see the docs [Here](https://github.com/Book-Club-Project/book_club_FE#readme)
+
 On you command line:
-1. Start the Backend server with `$ rails s` and navigate to http://localhost:5000/ to interact with the [Frontend](https://github.com/Book-Club-Project/book_club_FE)
+1. Navigate to the local directory where the frontend repo is housed
+2. Start the Frontend server with `$ rails s` and navigate to http://localhost:5000/ in your web browser. Here you are able to interact with the application.
+
+**Backend Server**
+ 
+On your command line:
+1. Navigate to the local directory where the backend repo is housed
+2. Run `$ rails s` to run the server locally
+3. Open a web browser and navigate to http://localhost:3000/
+4. Here you are able to explore the endpoints exposed by the API!
+
 ----------
+
+## Project Description
+
+This is a back-end project designed to explore the fundamentals of exposing and consuming an API in order to develop an app that integrates microservices. Book Club builds community through literature. Users can connect through groups, messaging, and a bountiful resource of books. Functionality is achieved by combining our own database, the Google Books API, and external communication APIs to allow real-time communication, discussions, and recommendations.
 
 ## Learning Goals for Project:
 
@@ -75,10 +98,9 @@ Implicit
 - Project planning
 - Reading/Writing documentation
 - Time Management/Prioritizing Work
-- Breaking down a large project into small pieces
-- Breaking down a problem into small steps
-- Experience in 'sprints'
-- GitHub workflow
+- Break down large project goals into manageable steps
+- Implement agile workflows
+- GitHub workflow and project management tools
 
 ----------
 
@@ -91,10 +113,11 @@ Implicit
 
 ### Important Gems
 
-- Testing: [rspec-rails](https://github.com/rspec/rspec-rails), [simplecov](https://github.com/simplecov-ruby/simplecov), [factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails), [faker](https://github.com/vajradog/faker-rails)
+- Testing: [rspec-rails](https://github.com/rspec/rspec-rails), [simplecov](https://github.com/simplecov-ruby/simplecov), [factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails), [faker](https://github.com/vajradog/faker-rails), [webmock](https://github.com/bblimke/webmock), [vcr](https://github.com/vcr/vcr)
 
 - API: [jsonapi-serializer](https://github.com/fotinakis/jsonapi-serializers), [figaro](https://medium.com/@MinimalGhost/the-figaro-gem-an-easier-way-to-securely-configure-rails-applications-c6f963b7e993)
 
+- User Authentication and Security: [bcrypt](https://github.com/bcrypt-ruby/bcrypt-ruby)
 
 ----------
 
@@ -109,7 +132,7 @@ Available endpoints
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/918e865de1f64267f728?action=collection%2Fimport)
 
-<h3> Books endpoint(s) </h3>
+### Books endpoints
 
 | http verb | name | data type | description | example |
 | --- | --- | --- | --- | --- |
@@ -184,7 +207,7 @@ Books by search example used ("Pride"):
 </details>
 
 
-<h3> Quotes endpoint(s) </h3>
+### Quotes endpoints
 
 | http verb | name | data type | description | example |
 | --- | --- | --- | --- | --- |
@@ -213,7 +236,7 @@ Random quote:
 </details>
 
 
-<h3> User endpoint(s) </h3>
+### User endpoints
 
 | http verb | name | data type | description | example |
 | --- | --- | --- | --- | --- |
@@ -297,7 +320,7 @@ All of a specific user's association with clubs:
 </details>
 
 
-<h3> Clubs endpoint(s) </h3>
+### Clubs endpoints
 
 | http verb | name | data type | description | example |
 | --- | --- | --- | --- | --- |
@@ -449,7 +472,7 @@ A specific club's comments:
 </details>
 
 
-<h3> Comments endpoint(s) </h3>
+### Comments endpoints
 
 | http verb | name | data type | description | example |
 | --- | --- | --- | --- | --- |
