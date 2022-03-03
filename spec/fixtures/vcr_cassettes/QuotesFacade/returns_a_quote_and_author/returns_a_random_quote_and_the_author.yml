@@ -19,19 +19,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 01 Mar 2022 19:05:47 GMT
+      - Thu, 03 Mar 2022 22:49:16 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '135'
+      - '32'
       Connection:
       - keep-alive
       Set-Cookie:
-      - AWSALB=KPHJQQan/MpGcz+D2OEuCjxAo6Aet12MNjBQgujKSEVN8CCaKzOsAYBtT4UqJu0zPm7ZjoSU92F5alJLZJMvoyty6Z3oxyjEayCmcEOeQJX4DquOCiFzZhl57Ya6;
-        Expires=Tue, 08 Mar 2022 19:05:47 GMT; Path=/
-      - AWSALBCORS=KPHJQQan/MpGcz+D2OEuCjxAo6Aet12MNjBQgujKSEVN8CCaKzOsAYBtT4UqJu0zPm7ZjoSU92F5alJLZJMvoyty6Z3oxyjEayCmcEOeQJX4DquOCiFzZhl57Ya6;
-        Expires=Tue, 08 Mar 2022 19:05:47 GMT; Path=/; SameSite=None; Secure
-      - PHPSESSID=dq16jr9ikob5qoltu1m53a77s7; path=/
+      - AWSALB=8i1VG883HQE33tVGuedzjCi0MXrdlpNzrSc1uZhadokFtTig5DgSRhQL9K3ZByFuMPkslWe2wipue0oEXpW6YW14vzoagFLXf5JQ2lNn472SNUGK7maMF71AJwBM;
+        Expires=Thu, 10 Mar 2022 22:49:16 GMT; Path=/
+      - AWSALBCORS=8i1VG883HQE33tVGuedzjCi0MXrdlpNzrSc1uZhadokFtTig5DgSRhQL9K3ZByFuMPkslWe2wipue0oEXpW6YW14vzoagFLXf5JQ2lNn472SNUGK7maMF71AJwBM;
+        Expires=Thu, 10 Mar 2022 22:49:16 GMT; Path=/; SameSite=None; Secure
+      - PHPSESSID=6jsfjui3df4tdihshaifh4m2h0; path=/
       Server:
       - Apache/2.4.51 (Amazon) PHP/7.0.33
       X-Powered-By:
@@ -42,8 +42,6 @@ http_interactions:
       - no-store, no-cache, must-revalidate
       Pragma:
       - no-cache
-      Vary:
-      - Accept-Encoding
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Headers:
@@ -51,14 +49,13 @@ http_interactions:
       Accept-Ranges:
       - bytes
       X-Varnish:
-      - '960423646'
+      - '1148881383'
       Age:
       - '0'
       Via:
       - 1.1 varnish
     body:
-      encoding: ASCII-8BIT
-      string: '{"result":{"quote":"You are who you are, and no one can change that.
-        So be yourself, because no one can do it better.","author":"Meylin D. Bojorge"}}'
-  recorded_at: Tue, 01 Mar 2022 19:05:47 GMT
+      encoding: UTF-8
+      string: '{"error":"Daily Usage Exceeded"}'
+  recorded_at: Thu, 03 Mar 2022 22:49:16 GMT
 recorded_with: VCR 6.0.0
