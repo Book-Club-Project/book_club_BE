@@ -42,23 +42,23 @@ reference: [Turing documentation](https://backend.turing.edu/module3/projects/co
 
 ### Set Up
 On your local system, open a terminal session to run the following commands:
-1. Clone this repository `$ git clone git@github.com:Sierra-T-9598/rails-engine.git`
-2. Navigate to the newly cloned directory `$ cd rails-engine`
-3. If bundler is not installed run `$ gem install bundler` 
+1. Clone this repository `$ git clone git@github.com:Book-Club-Project/book_club_BE.git`
+2. Navigate to the newly cloned directory `$ cd book_club_BE`
+3. If bundler is not installed run `$ gem install bundler`
 4. If or after bundler is installed run `$ bundle install` to install the required Gems
 5. If errors occur, check for proper installation and versions of `bundler`, `ruby`, and `rails`
-6. Set up the database locally with `$ rails db:{:drop,:create,:migrate,:seed}` 
+6. Set up the database locally with `$ rails db:{:drop,:create,:migrate,:seed}`
 7. Open your text editor and check to see that `schema.rb` exists
 8. You may also run the RSpec test suite locally with the command `$ bundle exec rspec` to ensure everything is functioning as expected.
 
-### Use of this Backend Repository 
-On your command line: 
+### Use of this Backend Repository
+On your command line:
 1. Run `$ rails s` in order to start the server locally to access the app through a web browser
 2. Open a web browser and navigate to http://localhost:3000/
 3. Now you may explore the API using the available endpoints listed below!
 
 ### Use of the BookClub Application
-On you command line: 
+On you command line:
 1. Start the Backend server with `$ rails s` and navigate to http://localhost:5000/ to interact with the [Frontend](https://github.com/Book-Club-Project/book_club_FE)
 ----------
 
@@ -219,7 +219,9 @@ Random quote:
 | --- | --- | --- | --- | --- |
 | GET | /users | String | Returns all users | /api/v1/users |
 | GET | /users/:id | Integer | Returns a single user based on id | /api/v1/users/{{users id}} |
-| GET | /users/:id/clubs | String | Returns all clubs that a specific user belongs to | /api/v1/users/{{user_id}}/clubs
+| GET | /users/:id/clubs | String | Returns all clubs that a specific user belongs to | /api/v1/users/{{user_id}}/clubs |
+| PATCH/PUT | /users/:id | | Edits a single user based on id | /api/v1/comments/{{user_id}} |
+| DELETE | /users/:id | | Deletes a single user based on id | /api/v1/comments/{{user_id}} |
 
 <details>
   <summary> JSON response examples </summary>
@@ -300,9 +302,11 @@ All of a specific user's association with clubs:
 | http verb | name | data type | description | example |
 | --- | --- | --- | --- | --- |
 | GET | /clubs | String | Returns all clubs | /api/v1/clubs |
-| GET | /clubs/:id | Integer | Returns a single club based on id | /api/v1/clubs/{{club id}} |
+| GET | /clubs/:id | Integer | Returns a single club based on id | /api/v1/clubs/{{club_id}} |
 | GET | /clubs/:id/users | String | Returns all users belonging to a specific club | /api/v1/clubs/{{club_id}}/users |
 | GET | /clubs/:id/comments | String | Returns all comments belonging to a specific club | /api/v1/clubs/{{club_id}}/comments |
+| PATCH/PUT | /clubs/:id| | Edits a specific club's data | /api/v1/clubs/{{club_id}} |
+| DELETE | /clubs/:id| | Deletes a specific club's data | /api/v1/clubs/{{club_id}} |
 
 
 <details>
@@ -451,7 +455,8 @@ A specific club's comments:
 | --- | --- | --- | --- | --- |
 | GET | /comments | String | Returns all comments | /api/v1/comments |
 | POST | /comments | String | Creates a new comment |  /api/v1/comments |
-| DELETE | /comments | String | Deletes a comment | /api/v1/comments |
+| PATCH/PUT | /comments/:id | | Returns a single comment based on id | /api/v1/comments/{{comment_id}} |
+| DELETE | /comments/:id |  | Deletes a comment | /api/v1/comments/{{comment_id}} |
 
 
 <details>
