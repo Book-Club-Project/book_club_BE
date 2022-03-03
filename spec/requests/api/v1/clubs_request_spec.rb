@@ -1,10 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "Clubs API" do
+RSpec.describe 'Clubs API' do
   describe "index: 'get /clubs'" do
     describe 'happy path' do
       it 'returns a json object of all clubs' do
-
         club_1 = club_with_users(users_count: 4)
         club_2 = club_with_users(users_count: 3)
         club_3 = club_with_users(users_count: 6)
@@ -73,13 +72,14 @@ RSpec.describe "Clubs API" do
     describe 'happy path' do
       it 'returns the new club as a json object' do
         user = create(:user)
-        club_params = ({name: 'Sherlock Homies',
+        club_params = { name: 'Sherlock Homies',
                         host_id: user.id,
-                        book_id: "9999"})
-        headers = {"CONTENT_TYPE" => "application/json"}
+                        book_id: '9999',
+                        params: [user.id] }
+        headers = { 'CONTENT_TYPE' => 'application/json' }
         post api_v1_clubs_path, headers: headers, params: JSON.generate(club: club_params)
         created_club = Club.last
-
+        # binding.pry
         expect(response.status).to eq(201)
         expect(created_club.name).to eq(club_params[:name])
         expect(created_club.host_id).to eq(club_params[:host_id])
@@ -89,9 +89,11 @@ RSpec.describe "Clubs API" do
 
     describe 'sad paths' do
       it 'does not create the new club if any attributes are missing and returns invalid error' do
-        club_params = ({name: 'Sherlock Homies',
-                        book_id: "9999"})
-        headers = {"CONTENT_TYPE" => "application/json"}
+        user = create(:user)
+        club_params = { name: 'Sherlock Homies',
+                        book_id: '9999',
+                        params: [user.id] }
+        headers = { 'CONTENT_TYPE' => 'application/json' }
         post api_v1_clubs_path, headers: headers, params: JSON.generate(club: club_params)
 
         expect(response.status).to eq(400)
@@ -99,11 +101,12 @@ RSpec.describe "Clubs API" do
 
       it 'ignores non-permitted attributes' do
         user = create(:user)
-        club_params = ({name: 'Sherlock Homies',
+        club_params = { name: 'Sherlock Homies',
                         host_id: user.id,
-                        book_id: "9999",
-                        non_permitted_attribute: 'wooohooooo'})
-        headers = {"CONTENT_TYPE" => "application/json"}
+                        book_id: '9999',
+                        non_permitted_attribute: 'wooohooooo',
+                        params: [user.id] }
+        headers = { 'CONTENT_TYPE' => 'application/json' }
         post api_v1_clubs_path, headers: headers, params: JSON.generate(club: club_params)
         created_club = Club.last
         club = JSON.parse(response.body, symbolize_names: true)
@@ -193,7 +196,7 @@ RSpec.describe "Clubs API" do
 
       context 'sad path' do
         it 'cannot find a club to delete' do
-          delete "/api/v1/clubs/999999"
+          delete '/api/v1/clubs/999999'
           expect(response.status).to eq 404
         end
       end
@@ -202,7 +205,7 @@ RSpec.describe "Clubs API" do
     describe 'update: patch /club' do
       it 'can update a club' do
         club = create :club, { name: 'Sherlock Homies' }
-        put "/api/v1/clubs/#{club.id}", params: { name: 'Harry Plotters'}
+        put "/api/v1/clubs/#{club.id}", params: { name: 'Harry Plotters' }
         expect(response).to be_successful
         expect(Club.last.name).to eq 'Harry Plotters'
       end
@@ -210,7 +213,7 @@ RSpec.describe "Clubs API" do
       context 'sad path' do
         it 'cannot update a club' do
           club = create :club, { name: 'Sherlock Homies' }
-          put "/api/v1/clubs/#{club.id}", params: { name: ''}
+          put "/api/v1/clubs/#{club.id}", params: { name: '' }
           expect(response.status).to eq 400
         end
       end

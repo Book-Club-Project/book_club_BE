@@ -8,7 +8,14 @@ class Api::V1::ClubsController < ApplicationController
   end
 
   def create
+    invited_users = User.find(params[:club][:params])
     club = Club.create!(club_params)
+    new_club = Club.find(club.id)
+    host = User.find(params[:club][:host_id])
+    all_users = invited_users.push(host)
+    all_users.each do |i_user|
+      new_club.user_clubs.create(user: i_user)
+    end
     render json: ClubSerializer.new(club), status: 201
   end
 
@@ -29,7 +36,7 @@ class Api::V1::ClubsController < ApplicationController
   private
 
   def club_params
-    params.require(:club).permit(:name, :host_id, :book_id)
+    params.require(:club).permit(:name, :host_id, :book_id, :params)
   end
 
 end

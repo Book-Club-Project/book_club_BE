@@ -19,19 +19,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 01 Mar 2022 19:05:49 GMT
+      - Thu, 03 Mar 2022 22:49:18 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '118'
+      - '32'
       Connection:
       - keep-alive
       Set-Cookie:
-      - AWSALB=Zfh7Ykbg2WuIv4GJITFJjr8qCyppX+/b7g9nu4w76bBVCNPHizA8Wvj24WO0pyjasUUlF+4m6DiXZB73AzW9Mm0lIkqtfDHrCkvORg7Yp8TN1JjXF8fphTE0A7ly;
-        Expires=Tue, 08 Mar 2022 19:05:49 GMT; Path=/
-      - AWSALBCORS=Zfh7Ykbg2WuIv4GJITFJjr8qCyppX+/b7g9nu4w76bBVCNPHizA8Wvj24WO0pyjasUUlF+4m6DiXZB73AzW9Mm0lIkqtfDHrCkvORg7Yp8TN1JjXF8fphTE0A7ly;
-        Expires=Tue, 08 Mar 2022 19:05:49 GMT; Path=/; SameSite=None; Secure
-      - PHPSESSID=osr04ljc6h87ne3kummkeg4053; path=/
+      - AWSALB=r5etTfCPFeTTr0aPfhJpXB7jGsXU2DV90+zGnNrKw5gYVPPc9gW+fHuo8pswkvUVPYQ3AjhVWUkL/fvXDmZhEinTGuRanU14CN0TND0ZjSEjCM9OW7FWabkR6Xkj;
+        Expires=Thu, 10 Mar 2022 22:49:18 GMT; Path=/
+      - AWSALBCORS=r5etTfCPFeTTr0aPfhJpXB7jGsXU2DV90+zGnNrKw5gYVPPc9gW+fHuo8pswkvUVPYQ3AjhVWUkL/fvXDmZhEinTGuRanU14CN0TND0ZjSEjCM9OW7FWabkR6Xkj;
+        Expires=Thu, 10 Mar 2022 22:49:18 GMT; Path=/; SameSite=None; Secure
+      - PHPSESSID=bletp6ouq5d1knuhcl96ueafa0; path=/
       Server:
       - Apache/2.4.51 (Amazon) PHP/7.0.33
       X-Powered-By:
@@ -42,8 +42,6 @@ http_interactions:
       - no-store, no-cache, must-revalidate
       Pragma:
       - no-cache
-      Vary:
-      - Accept-Encoding
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Headers:
@@ -51,14 +49,13 @@ http_interactions:
       Accept-Ranges:
       - bytes
       X-Varnish:
-      - '114314944'
+      - '984261544'
       Age:
       - '0'
       Via:
       - 1.1 varnish
     body:
-      encoding: ASCII-8BIT
-      string: '{"result":{"quote":"The water from the river becomes salty when it
-        gets into the ocean.","author":"Vikrant Parsai"}}'
-  recorded_at: Tue, 01 Mar 2022 19:05:49 GMT
+      encoding: UTF-8
+      string: '{"error":"Daily Usage Exceeded"}'
+  recorded_at: Thu, 03 Mar 2022 22:49:18 GMT
 recorded_with: VCR 6.0.0
