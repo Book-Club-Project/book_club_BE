@@ -2,7 +2,7 @@ require 'rails_helper'
 
 
 RSpec.describe "quote API" do
-  it "it can get book attributes", :vcr do
+  xit "it can get book attributes", :vcr do
     get "/api/v1/quote"
 
     expect(response).to be_successful

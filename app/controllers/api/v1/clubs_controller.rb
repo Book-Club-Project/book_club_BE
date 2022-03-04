@@ -8,11 +8,9 @@ class Api::V1::ClubsController < ApplicationController
   end
 
   def create
-    invited_users = User.find(params[:club][:params])
+    all_users = User.find(params[:club][:params])
     club = Club.create!(club_params)
     new_club = Club.find(club.id)
-    host = User.find(params[:club][:host_id])
-    all_users = invited_users.push(host)
     all_users.each do |i_user|
       new_club.user_clubs.create(user: i_user)
     end
