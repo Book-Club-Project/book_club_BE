@@ -131,8 +131,10 @@ Implicit
 
 ## APIs
 Available endpoints
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/7c857812990f1e1e70df?action=collection%2Fimport)
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/918e865de1f64267f728?action=collection%2Fimport)
+<!-- local host button -->
+<!-- [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/918e865de1f64267f728?action=collection%2Fimport) -->
 
 ### Books endpoints
 
