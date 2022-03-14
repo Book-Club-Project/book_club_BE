@@ -68,17 +68,22 @@ In order to run this application you need both this Backend Repository and the a
  
 For a full explanation to set-up the frontend server, please see the docs [Here](https://github.com/Book-Club-Project/book_club_FE#readme)
 
-On you command line:
+<!-- On you command line:
 1. Navigate to the local directory where the frontend repo is housed
-2. Start the Frontend server with `$ rails s` and navigate to http://localhost:5000/ in your web browser. Here you are able to interact with the application.
+2. Start the Frontend server with `$ rails s` and navigate to http://localhost:5000/ in your web browser. Here you are able to interact with the application. -->
+
+<!-- 1.  Navigate to https://git.heroku.com/bookclub2022.git and take a look around! -->
+1. Navigate to https://rocky-wave-89058.herokuapp.com/ and take a look around!
 
 **Backend Server**
  
-On your command line:
+<!-- On your command line:
 1. Navigate to the local directory where the backend repo is housed
 2. Run `$ rails s` to run the server locally
 3. Open a web browser and navigate to http://localhost:3000/
-4. Here you are able to explore the endpoints exposed by the API!
+4. Here you are able to explore the endpoints exposed by the API! -->
+
+1. Navigate to https://hidden-garden-03870.herokuapp.com/ to interact with the endpoints.
 
 ----------
 
