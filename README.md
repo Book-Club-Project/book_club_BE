@@ -1,4 +1,5 @@
-![th-1](https://user-images.githubusercontent.com/87088092/155640565-91ed61db-0262-4bc9-8096-51b616c21508.jpg)
+![9](https://user-images.githubusercontent.com/69017022/156702159-28111e9c-a39d-4afd-8649-a771df38e004.png)
+
 # Mod3 Group Consultancy Project
 #####  (this repo is used with the [Book Club app](https://github.com/Book-Club-Project/book_club_FE))
 
@@ -83,7 +84,7 @@ On your command line:
 
 ## Project Description
 
-This is a back-end project designed to explore the fundamentals of exposing and consuming an API in order to develop an app that integrates microservices. Book Club builds community through literature. Users can connect through groups, messaging, and a bountiful resource of books. Functionality is achieved by combining our own database, the Google Books API, and external communication APIs to allow real-time communication, discussions, and recommendations.
+This is a back-end project designed to explore the fundamentals of exposing and consuming an API in order to develop an app that integrates microservices. Book Club builds community through literature. Users can connect through groups, messaging, and a bountiful resource of books. Functionality is achieved by combining our own database, the Google Books API, and messaging functionality to allow real-time communication, discussions, and recommendations.
 
 ## Learning Goals for Project:
 
@@ -123,7 +124,8 @@ Implicit
 
 ## Database Schema
 
-![Screen Shot 2022-03-01 at 11 06 06 AM](https://user-images.githubusercontent.com/69017022/156225150-ab72f4ed-f274-4e08-b0d3-9d843f6521c4.png)
+![Screen Shot 2022-03-03 at 9 59 31 PM](https://user-images.githubusercontent.com/69017022/156702356-7b0cd2ad-2f71-49b5-8c74-b052b371e7fa.png)
+
 
 ----------
 
