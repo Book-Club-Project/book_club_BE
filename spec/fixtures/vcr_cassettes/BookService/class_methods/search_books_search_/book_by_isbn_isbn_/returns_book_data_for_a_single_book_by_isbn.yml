@@ -1,0 +1,125 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/books/v1/volumes?q=isbn:0671027034
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Tue, 15 Mar 2022 22:47:22 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "kind": "books#volumes",
+          "totalItems": 1,
+          "items": [
+            {
+              "kind": "books#volume",
+              "id": "D7TznQEACAAJ",
+              "etag": "Ogp4lAuNQi8",
+              "selfLink": "https://www.googleapis.com/books/v1/volumes/D7TznQEACAAJ",
+              "volumeInfo": {
+                "title": "How to Win Friends and Influence People",
+                "authors": [
+                  "Dale Carnegie"
+                ],
+                "publisher": "Gallery",
+                "publishedDate": "1998-10-01",
+                "description": "Provides suggestions for successfully dealing with people both in social and business situations",
+                "industryIdentifiers": [
+                  {
+                    "type": "ISBN_10",
+                    "identifier": "0671027034"
+                  },
+                  {
+                    "type": "ISBN_13",
+                    "identifier": "9780671027032"
+                  }
+                ],
+                "readingModes": {
+                  "text": false,
+                  "image": false
+                },
+                "pageCount": 260,
+                "printType": "BOOK",
+                "categories": [
+                  "Business & Economics"
+                ],
+                "averageRating": 4,
+                "ratingsCount": 3670,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "preview-1.0.0",
+                "imageLinks": {
+                  "smallThumbnail": "http://books.google.com/books/content?id=D7TznQEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+                  "thumbnail": "http://books.google.com/books/content?id=D7TznQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com/books?id=D7TznQEACAAJ&dq=isbn:0671027034&hl=&cd=1&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=D7TznQEACAAJ&dq=isbn:0671027034&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/How_to_Win_Friends_and_Influence_People.html?hl=&id=D7TznQEACAAJ"
+              },
+              "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+              },
+              "accessInfo": {
+                "country": "US",
+                "viewability": "NO_PAGES",
+                "embeddable": false,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                  "isAvailable": false
+                },
+                "pdf": {
+                  "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=D7TznQEACAAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "NONE",
+                "quoteSharingAllowed": false
+              },
+              "searchInfo": {
+                "textSnippet": "Provides suggestions for successfully dealing with people both in social and business situations"
+              }
+            }
+          ]
+        }
+  recorded_at: Tue, 15 Mar 2022 22:47:22 GMT
+recorded_with: VCR 6.0.0

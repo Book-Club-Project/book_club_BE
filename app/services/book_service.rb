@@ -3,6 +3,10 @@ class BookService
     get_data("/books/v1/volumes?q=#{search}")[:items]
   end
 
+  def self.book_by_isbn(isbn)
+    get_data("/books/v1/volumes?q=isbn:#{isbn}")[:items][0]
+  end
+
   def self.book_info(book_id)
     get_data("/books/v1/volumes/#{book_id}")
   end
