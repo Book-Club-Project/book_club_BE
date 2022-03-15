@@ -9,4 +9,9 @@ class Api::V1::BooksController < ApplicationController
     searched_title = params[:title]
     render json: BookSerializer.new(BooksFacade.get_searched_books(searched_title))
   end
+
+  def book_by_isbn
+    book_isbn = params[:isbn]
+    render json: BookSerializer.new(BooksFacade.get_book_by_isbn(book_isbn))
+  end
 end

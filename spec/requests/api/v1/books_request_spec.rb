@@ -35,4 +35,16 @@ RSpec.describe "books API" do
     end
   end
 
+  it 'can get books searched by isbn' do
+    get "/api/v1/books/isbn?isbn=0671027034"
+
+    expect(response).to be_successful
+    expect(response.status).to eq(200)
+
+    book = JSON.parse(response.body, symbolize_names: true)
+
+    expect(book).to be_a(Hash)
+    expect(book[:data][:attributes][:title]).to eq("How to Win Friends and Influence People")
+  end
+
 end
