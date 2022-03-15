@@ -35,7 +35,7 @@ RSpec.describe "books API" do
     end
   end
 
-  it 'can get books searched by isbn' do
+  it 'can get books searched by isbn', :vcr do
     get "/api/v1/books/isbn?isbn=0671027034"
 
     expect(response).to be_successful
