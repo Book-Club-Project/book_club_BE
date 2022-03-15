@@ -73,7 +73,7 @@ For a full explanation to set-up the frontend server, please see the docs [Here]
 2. Start the Frontend server with `$ rails s` and navigate to http://localhost:5000/ in your web browser. Here you are able to interact with the application. -->
 
 <!-- 1.  Navigate to https://git.heroku.com/bookclub2022.git and take a look around! -->
-1. Navigate to https://rocky-wave-89058.herokuapp.com/ and take a look around!
+1. Navigate to https://bookclub2022.herokuapp.com/ and take a look around!
 
 **Backend Server**
  
