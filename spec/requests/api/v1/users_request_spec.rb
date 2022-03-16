@@ -92,7 +92,6 @@ describe "Users API" do
                     })
         headers = {"CONTENT_TYPE" => "application/json"}
         post api_v1_users_path, headers: headers, params: JSON.generate(user: user_params)
-
         expect(response.status).to eq(400)
       end
 
