@@ -19,4 +19,11 @@ RSpec.describe BooksFacade do
       expect(book).to be_a Book
     end
   end
+
+  describe '::get_book_by_isbn', :vcr do
+    it 'returns a single book object' do
+      book = BooksFacade.get_book_by_isbn("0671027034")
+      expect(book).to be_a Book
+    end
+  end
 end

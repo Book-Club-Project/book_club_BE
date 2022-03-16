@@ -13,4 +13,9 @@ class BooksFacade
     book = BookService.book_info(book_id)
     Book.new(book)
   end
+
+  def self.get_book_by_isbn(isbn)
+    book = BookService.book_by_isbn(isbn)
+    Book.new(book)
+  end
 end
